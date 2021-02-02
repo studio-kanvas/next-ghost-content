@@ -1,8 +1,9 @@
 import Head from 'next/head';
+import { getPosts } from '../lib/posts';
 import Layout from '../components/layout/layout';
 import * as GS from '../styles/global';
 
-export default function Home() {
+export default function Home({ posts }) {
 	return (
 		<>
 			<Layout>
@@ -13,14 +14,19 @@ export default function Home() {
 					<h4>H4</h4>
 					<h5>H5</h5>
 					<p>
-						Paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugiat sequi, labore reprehenderit aspernatur quod saepe excepturi impedit praesentium dignissimos cum,
-						tempore ratione omnis? Sed maiores atque sit esse deserunt. <a href="#">Click here for more info</a>
+						Paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugiat sequi,
+						labore reprehenderit aspernatur quod saepe excepturi impedit praesentium dignissimos
+						cum, tempore ratione omnis? Sed maiores atque sit esse deserunt.{' '}
+						<a href="#">Click here for more info</a>
 					</p>
+					<ul>{/* {posts.map((post) => (
+							<li key={post.id}>{post.title}</li>
+						))} */}</ul>
 					<GS.MainButton href="#">Click Here</GS.MainButton>
-					<GS.FlexTwo>
+					<GS.FlexEven>
 						<div>Left 50%</div>
 						<div>Right 50%</div>
-					</GS.FlexTwo>
+					</GS.FlexEven>
 					<GS.FlexOneThree>
 						<div>Left 25%</div>
 						<div>Right 75%</div>
@@ -50,3 +56,17 @@ export default function Home() {
 		</>
 	);
 }
+
+// export async function getStaticProps(context) {
+// 	const posts = await getPosts();
+
+// 	if (!posts) {
+// 		return {
+// 			notFound: true,
+// 		};
+// 	}
+
+// 	return {
+// 		props: { posts },
+// 	};
+// }

@@ -29,7 +29,7 @@ export const FooterNavigation = styled(GS.FlexThreeOne)`
 	}
 `;
 
-export const FooterInformation = styled(GS.FlexTwo)`
+export const FooterInformation = styled(GS.FlexEven)`
 	text-align: left;
 	align-items: flex-start;
 	& > div:nth-child(1) {
