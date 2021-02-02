@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Email from './email';\nexport default Email;","map":{"version":3,"sources":["/Volumes/Ben Drive/From The Ground Up/website/frontend/components/email/index.js"],"names":["Email"],"mappings":"AAAA,OAAOA,KAAP,MAAkB,SAAlB;AACA,eAAeA,KAAf","sourcesContent":["import Email from './email';\nexport default Email;\n"]},"metadata":{},"sourceType":"module"}

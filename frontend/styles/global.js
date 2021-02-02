@@ -268,3 +268,18 @@ export const Block = styled.div`
 	left: ${(props) => props.left};
 	background: ${(props) => props.theme.colors.block};
 `;
+
+export const ScrollContainer = styled.div`
+	scroll-snap-type: y mandatory;
+	height: 100vh;
+	overflow-y: scroll;
+	& > .scroll-child {
+		scroll-snap-align: start;
+	}
+`;
+
+export const HR = styled.div`
+	width: 100%;
+	border-bottom: 0.5rem solid #000;
+	padding: 0.2rem 0rem;
+`;

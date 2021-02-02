@@ -6,7 +6,7 @@ export default {
 		reading: '2rem',
 	},
 	padding: '2.5rem',
-	maxWidth: '1024px',
+	maxWidth: '1200px',
 	midWidth: '768px',
 	smWidth: '640px',
 	colors: {
