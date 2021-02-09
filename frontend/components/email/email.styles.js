@@ -3,12 +3,12 @@ import * as GS from '../../styles/global';
 import { motion } from 'framer-motion';
 
 export const HeroBackground = styled(GS.FullWidth)`
-	background: #eee;
+	background: url('/ftgu-academy.jpg') no-repeat center center;
+	background-size: cover;
 	width: 100vw;
 	height: 100vh;
 	position: relative;
 	@media screen and (max-width: ${(props) => props.theme.smWidth}) {
-		background: rgba(0, 0, 0, 0.5);
 		z-index: 0;
 	}
 `;
@@ -21,11 +21,11 @@ export const Message = styled.div`
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
+	h1 {
+		color: #fff;
+	}
 	@media screen and (max-width: ${(props) => props.theme.smWidth}) {
 		top: 10%;
-		h1 {
-			color: #fff;
-		}
 		transform: translate(-50%, 0%);
 	}
 `;

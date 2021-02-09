@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const stagger = {
@@ -64,13 +64,34 @@ export const exit = {
 	},
 };
 
-//global standalone side padding
+const ArrowAnimation = keyframes`
+	0% {
+		bottom: -1rem;
+	}
+	50% {
+		bottom: -2rem;
+	}
+	100% {
+		bottom: -1rem;
+	}
+`;
+
+export const Center = styled.div`
+	margin: 0 auto;
+	text-align: center;
+`;
+
 export const GlobalPadding = styled.div`
 	padding: 0rem ${(props) => props.theme.padding};
 `;
-//global standalone side padding
+
 export const YPadding = styled.div`
 	padding: ${(props) => props.theme.padding} 0rem;
+`;
+
+//dynamic y padding
+export const YCPadding = styled.div`
+	padding: ${(props) => props.padding} 0rem;
 `;
 
 //max-container
@@ -176,8 +197,11 @@ export const GridTwo = styled.div`
 
 //main button
 export const MainButton = styled(motion.a)`
-	padding: 0.5rem 1.5rem;
+	padding: 1.25rem 2.5rem;
 	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 2rem;
+	font-family: ${(props) => props.theme.fonts.header};
 	transition: all 0.25s ease-in-out;
 	color: ${(props) => props.theme.colors.primary};
 	border: 0.3rem solid ${(props) => props.theme.colors.primary};
@@ -188,6 +212,15 @@ export const MainButton = styled(motion.a)`
 		text-decoration: none;
 		cursor: pointer;
 		color: #fff;
+	}
+`;
+
+export const SecondaryButton = styled(MainButton)`
+	color: #fff;
+	border: 0.3rem solid #fff;
+	&:hover {
+		background: #fff;
+		color: #000;
 	}
 `;
 
@@ -282,4 +315,31 @@ export const HR = styled.div`
 	width: 100%;
 	border-bottom: 0.5rem solid #000;
 	padding: 0.2rem 0rem;
+`;
+
+export const PrimaryBlock = styled.div`
+	z-index: 0;
+	position: absolute;
+	top: ${(props) => props.top};
+	left: ${(props) => props.left};
+	width: ${(props) => props.width};
+	height: ${(props) => props.height};
+	border-radius: ${(props) => props.borderRadius};
+	background: ${(props) => props.theme.colors.primary};
+`;
+
+export const ImageBackground = styled.div`
+	background: ${(props) => props.background} no-repeat top center;
+	background-size: cover;
+`;
+
+export const Arrow = styled.div`
+	color: #fff;
+	opacity: 0.5;
+	font-size: 7rem;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	animation: ${ArrowAnimation} 2s ease-in-out infinite;
 `;

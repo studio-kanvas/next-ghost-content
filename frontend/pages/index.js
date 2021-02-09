@@ -18,10 +18,20 @@ export default function Home({ posts }) {
 			<Layout>
 				<GS.ScrollContainer>
 					<div className="scroll-child">
-						<Hero />
+						<Hero
+							message="We bring clarity to entrepreneurs and equip them to build brands that impact the world."
+							background={`url('/ftgu-our-goal.jpg')`}
+							link="Learn More"
+							href="/"
+						/>
 					</div>
 					<div className="scroll-child">
-						<Hero />
+						<Hero
+							message="Mission 100M"
+							background={`url('/ftgu-mission-1m.jpg')`}
+							link="Learn More"
+							href="/"
+						/>
 					</div>
 					<div className="scroll-child">
 						<Email />

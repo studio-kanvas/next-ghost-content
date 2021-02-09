@@ -12,7 +12,10 @@ const Header = () => {
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<link rel="preconnect" href="https://fonts.gstatic.com" />
-				<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+				<link
+					href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;700&display=swap"
+					rel="stylesheet"
+				/>
 			</Head>
 			<S.Header>
 				<GS.MaxContainer>
@@ -23,7 +26,9 @@ const Header = () => {
 						<div>
 							<ul>
 								<li>Home</li>
+								<li>Academy</li>
 								<li>About</li>
+								<li>Blog</li>
 								<li>Contact</li>
 							</ul>
 						</div>

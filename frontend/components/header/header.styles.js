@@ -29,6 +29,7 @@ export const Navigation = styled.nav`
 			li {
 				display: inline;
 				padding: 1rem;
+				color: #eee;
 				&:nth-last-child(1) {
 					padding: 0;
 				}

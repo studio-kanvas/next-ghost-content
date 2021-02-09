@@ -10,7 +10,7 @@ export default {
 	midWidth: '768px',
 	smWidth: '640px',
 	colors: {
-		primary: 'green',
+		primary: '#F84F49',
 		secondary: 'red',
 		success: 'green',
 		disabled: '#888',
