@@ -303,7 +303,7 @@ export const Block = styled.div`
 `;
 
 export const ScrollContainer = styled.div`
-	scroll-snap-type: y mandatory;
+	scroll-snap-type: y proximity;
 	height: 100vh;
 	overflow-y: scroll;
 	& > .scroll-child {

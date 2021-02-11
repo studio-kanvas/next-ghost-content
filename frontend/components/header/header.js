@@ -25,11 +25,31 @@ const Header = () => {
 						</div>
 						<div>
 							<ul>
-								<li>Home</li>
-								<li>Academy</li>
-								<li>About</li>
-								<li>Blog</li>
-								<li>Contact</li>
+								<li>
+									<Link href="/">
+										<a>Home</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="/academy">
+										<a>Academy</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="/about">
+										<a>About</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="/blog">
+										<a>Blog</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="/contact">
+										<a>Contact</a>
+									</Link>
+								</li>
 							</ul>
 						</div>
 					</S.Navigation>

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@tryghost/content-api": "^1.4.13",
+    "@tryghost/helpers": "^1.1.38",
     "autoprefixer": "^10.2.1",
     "babel-plugin-macros": "^3.0.1",
     "dotenv": "^8.2.0",

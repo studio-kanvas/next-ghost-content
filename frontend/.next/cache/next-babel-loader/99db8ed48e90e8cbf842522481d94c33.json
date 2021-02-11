@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Header from './header';\nexport default Header;","map":{"version":3,"sources":["/Volumes/Ben Drive/From The Ground Up/website/frontend/components/header/index.js"],"names":["Header"],"mappings":"AAAA,OAAOA,MAAP,MAAmB,UAAnB;AACA,eAAeA,MAAf","sourcesContent":["import Header from './header';\nexport default Header;"]},"metadata":{},"sourceType":"module"}

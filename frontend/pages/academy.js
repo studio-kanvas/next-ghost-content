@@ -4,33 +4,25 @@ import Layout from '../components/layout/layout';
 import * as GS from '../styles/global';
 import Hero from '../components/hero';
 import Callout from '../components/callout';
+import { ACADEMY } from '../data/academy';
 
 export default function Academy() {
 	return (
 		<>
 			<Layout>
 				<Hero
-					message="From the Ground Up Academy"
-					background={`url('/ftgu-academy-header.jpg')`}
-					link="Sign Up Now"
-					href="/"
+					message={ACADEMY.first.message}
+					background={ACADEMY.first.background}
+					link={ACADEMY.first.link}
+					href={ACADEMY.first.href}
+					arrow
 				/>
 				<GS.MaxContainer>
 					<GS.YCPadding padding={'5rem'}>
 						<GS.FlexEven>
 							<div>
-								<h2>Our Training</h2>
-								<p>
-									Our online training is an in-depth expansion of our YouTube channel and is
-									designed to help you navigate the apparel industry from A-Z. With
-									worksheets to assist you throughout the training, our goal is to give you
-									all the tools you need to successfully launch and grow your brand.
-								</p>
-								<p>
-									In addition to the online training you also get access to a private group,
-									and monthly training calls to get your questions answered in real time.
-									This program is for those who are ready to take action and see results.
-								</p>
+								<h2>{ACADEMY.second.header}</h2>
+								<span dangerouslySetInnerHTML={{ __html: ACADEMY.second.message }} />
 								<GS.MainButton>Join Today</GS.MainButton>
 							</div>
 							<div style={{ position: 'relative' }}>
@@ -59,15 +51,12 @@ export default function Academy() {
 											</BigText>
 										</div>
 										<div>
-											<p style={{ color: '#fff', textAlign: 'right' }}>
-												After navigating the industry from manufacturing, to
-												distribution, and eCommerce, we realized that most training
-												programs are unclear or don’t even show the logistics of
-												getting things properly made and launched in the market. After
-												going through this course you will have clarity about all
-												facets of the apparel industry, and will be better prepared to
-												grow your brand.
-											</p>
+											<p
+												style={{ color: '#fff', textAlign: 'right' }}
+												dangerouslySetInnerHTML={{
+													__html: ACADEMY.third.message,
+												}}
+											/>
 											<GS.SecondaryButton style={{ float: 'right' }}>
 												Sign Up Now
 											</GS.SecondaryButton>
@@ -85,11 +74,11 @@ export default function Academy() {
 					<GS.ImageBackground background={`url('/ftgu-empower.jpg')`}>
 						<GS.MaxContainer>
 							<GS.YCPadding padding={'25rem'}>
-								<Heading>Empowering you to take action</Heading>
+								<Heading>{ACADEMY.fourth.header}</Heading>
 								<Callout
-									calloutone={'Step by Step Plan'}
-									callouttwo={'Community'}
-									calloutthree={'Ongoing Support'}
+									calloutone={ACADEMY.fourth.calloutone}
+									callouttwo={ACADEMY.fourth.callouttwo}
+									calloutthree={ACADEMY.fourth.calloutthree}
 								/>
 							</GS.YCPadding>
 						</GS.MaxContainer>
@@ -105,12 +94,12 @@ export default function Academy() {
 								<div>
 									<h2>What's Included</h2>
 									<List>
-										<li>Apparel Manufacturing</li>
-										<li>Design</li>
-										<li>Marketing</li>
-										<li>Establishing Your Business</li>
-										<li>Monthly Training</li>
-										<li>eCommerce</li>
+										<li>{ACADEMY.fifth.item1}</li>
+										<li>{ACADEMY.fifth.item2}</li>
+										<li>{ACADEMY.fifth.item3}</li>
+										<li>{ACADEMY.fifth.item4}</li>
+										<li>{ACADEMY.fifth.item5}</li>
+										<li>{ACADEMY.fifth.item6}</li>
 									</List>
 								</div>
 							</GS.FlexEven>

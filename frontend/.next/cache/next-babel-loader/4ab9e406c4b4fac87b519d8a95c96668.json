@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Footer from './footer';\nexport default Footer;","map":{"version":3,"sources":["/Volumes/Ben Drive/From The Ground Up/website/frontend/components/footer/index.js"],"names":["Footer"],"mappings":"AAAA,OAAOA,MAAP,MAAmB,UAAnB;AACA,eAAeA,MAAf","sourcesContent":["import Footer from './footer';\nexport default Footer;\n"]},"metadata":{},"sourceType":"module"}

@@ -3,46 +3,31 @@ import styled from 'styled-components';
 import Layout from '../../components/layout/layout';
 import * as GS from '../../styles/global';
 import Hero from '../../components/hero';
+import { getTags } from '../../lib/ghost';
+import Title from '../../components/title';
 
-export default function Academy() {
+export default function Academy({ tags }) {
 	return (
 		<>
 			<Layout>
-				<Hero message="Blog" background={`url('/ftgu-academy-header.jpg')`} />
+				<Hero message="Blog" background={`url('/ftgu-academy-header.jpg')`} arrow tags={tags} />
 				<GS.MaxContainer>
 					<GS.YCPadding padding={'5rem'}>
-						<GS.FlexEven>
-							<div>
-								<h2>Our Training</h2>
-								<p>
-									Our online training is an in-depth expansion of our YouTube channel and is
-									designed to help you navigate the apparel industry from A-Z. With
-									worksheets to assist you throughout the training, our goal is to give you
-									all the tools you need to successfully launch and grow your brand.
-								</p>
-								<p>
-									In addition to the online training you also get access to a private group,
-									and monthly training calls to get your questions answered in real time.
-									This program is for those who are ready to take action and see results.
-								</p>
-								<GS.MainButton>Join Today</GS.MainButton>
-							</div>
-							<div style={{ position: 'relative' }}>
-								<GS.PrimaryBlock
-									width={'25rem'}
-									height={'35rem'}
-									borderRadius={'3rem'}
-									top={'4rem'}
-									left={'20rem'}
-								/>
-								<Profile src="/ftgu-john-academy.webp" width="400" height="571" />
-							</div>
-						</GS.FlexEven>
+						<Title title="Top Stories" />
 					</GS.YCPadding>
 				</GS.MaxContainer>
 			</Layout>
 		</>
 	);
+}
+
+export async function getStaticProps(context) {
+	const tags = await getTags();
+	return {
+		props: {
+			tags,
+		},
+	};
 }
 
 const List = styled.ul`

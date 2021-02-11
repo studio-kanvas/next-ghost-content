@@ -33,6 +33,11 @@ export const Navigation = styled.nav`
 				&:nth-last-child(1) {
 					padding: 0;
 				}
+				a,
+				a:visited {
+					color: #eee;
+					text-decoration: none;
+				}
 			}
 		}
 	}
