@@ -5,8 +5,6 @@ import Link from 'next/link';
 import Title from '../title';
 
 const Bloggy = ({ posts, post }) => {
-	console.log(posts);
-
 	const timeConvert = (time) => {
 		time = time.slice(0, 10);
 		return time;

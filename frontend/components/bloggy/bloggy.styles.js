@@ -43,8 +43,20 @@ export const Article = styled.article`
 		margin: 0;
 		padding: 2.5rem 0rem 0rem 0rem;
 	}
-	h2 {
+	h2,
+	h3,
+	h4,
+	h5 {
 		margin-top: 3rem;
+	}
+	h3 {
+		font-size: 3rem;
+	}
+	h4 {
+		font-size: 2.75rem;
+	}
+	h5 {
+		font-size: 2.5rem;
 	}
 `;
 
