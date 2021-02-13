@@ -21,7 +21,7 @@ export default function Academy() {
 					<GS.YCPadding padding={'5rem'}>
 						<GS.FlexEven>
 							<div>
-								<h2>{ACADEMY.second.header}</h2>
+								<h3>{ACADEMY.second.header}</h3>
 								<span dangerouslySetInnerHTML={{ __html: ACADEMY.second.message }} />
 								<GS.MainButton>Join Today</GS.MainButton>
 							</div>

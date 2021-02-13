@@ -3,14 +3,13 @@ import * as GS from '../../styles/global';
 
 export default function Title({ title }) {
 	return (
-		<>
+		<div className="title-container">
 			<S.Flex>
 				<div>
-					<h2>{title}</h2>
+					<h3>{title}</h3>
 				</div>
-				<div>Read More</div>
 			</S.Flex>
-			<GS.HR />
-		</>
+			<GS.HR className="hr" />
+		</div>
 	);
 }

@@ -3,17 +3,19 @@ import styled from 'styled-components';
 import Layout from '../../components/layout/layout';
 import * as GS from '../../styles/global';
 import Hero from '../../components/hero';
-import { getTags } from '../../lib/ghost';
+import { getPosts, getTags } from '../../lib/ghost';
 import Title from '../../components/title';
+import Bloggy from '../../components/bloggy';
 
-export default function Academy({ tags }) {
+export default function Academy({ tags, posts }) {
 	return (
 		<>
 			<Layout>
-				<Hero message="Blog" background={`url('/ftgu-academy-header.jpg')`} arrow tags={tags} />
+				<Hero message="Blog" background={`url('/ftgu-academy-header.jpg')`} tags={tags} />
 				<GS.MaxContainer>
 					<GS.YCPadding padding={'5rem'}>
-						<Title title="Top Stories" />
+						<Title title="The Latest" />
+						<Bloggy posts={posts} />
 					</GS.YCPadding>
 				</GS.MaxContainer>
 			</Layout>
@@ -22,10 +24,12 @@ export default function Academy({ tags }) {
 }
 
 export async function getStaticProps(context) {
+	const posts = await getPosts();
 	const tags = await getTags();
 	return {
 		props: {
 			tags,
+			posts,
 		},
 	};
 }

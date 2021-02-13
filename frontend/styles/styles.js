@@ -16,13 +16,13 @@ const GlobalStyle = createGlobalStyle`
         padding: .75rem 0rem;
     }
     h1 {
-        font-size: 3.5rem;
+        font-size: 8rem;
     }
     h2 {
-        font-size: 3.5rem;
+        font-size: 6rem;
     }
     h3 {
-        font-size: 3rem;
+        font-size: 4rem;
     }
     h4 {
         font-size: 2.75rem;

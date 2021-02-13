@@ -1,1 +1,1 @@
-First production website w/ the Ghost API.
+First production website w/ the Ghost Content API.

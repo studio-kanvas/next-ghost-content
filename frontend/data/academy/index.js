@@ -36,7 +36,7 @@ export const ACADEMY = {
                     will have clarity about all facets of the apparel
                     industry, and will be better prepared to grow your
                     brand.
-                </p>`,
+                `,
 	},
 
 	//empowering section

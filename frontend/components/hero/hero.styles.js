@@ -34,3 +34,19 @@ export const Tags = styled.ul`
 		}
 	}
 `;
+
+export const SingleArticle = styled(GS.FlexEven)`
+	div {
+		padding-right: 1rem;
+	}
+	div,
+	a {
+		color: #ccc;
+		font-size: 2.5rem;
+		font-family: ${(props) => props.theme.fonts.header};
+	}
+	a {
+		padding-right: 1rem;
+		text-decoration: none;
+	}
+`;
