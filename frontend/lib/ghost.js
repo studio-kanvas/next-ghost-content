@@ -1,7 +1,8 @@
 import GhostContentAPI from '@tryghost/content-api';
+require('dotenv').config();
 
 const api = new GhostContentAPI({
-	url: 'https://fromthegroundup.ghost.io',
+	url: process.env.GHOST_URL,
 	key: process.env.GHOST_KEY,
 	version: 'v3',
 });
