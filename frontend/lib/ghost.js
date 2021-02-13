@@ -1,7 +1,7 @@
 import GhostContentAPI from '@tryghost/content-api';
 
 const api = new GhostContentAPI({
-	url: process.env.GHOST_URL,
+	url: 'https://fromthegroundup.ghost.io',
 	key: process.env.GHOST_KEY,
 	version: 'v3',
 });
