@@ -1,1 +1,0 @@
-{"ast":null,"code":"import Title from './title';\nexport default Title;","map":{"version":3,"sources":["/Volumes/Ben Drive/From The Ground Up/website/frontend/components/title/index.js"],"names":["Title"],"mappings":"AAAA,OAAOA,KAAP,MAAkB,SAAlB;AACA,eAAeA,KAAf","sourcesContent":["import Title from './title';\nexport default Title;\n"]},"metadata":{},"sourceType":"module"}

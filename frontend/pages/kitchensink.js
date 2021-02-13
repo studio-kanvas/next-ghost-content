@@ -19,10 +19,10 @@ export default function Home() {
 						<a href="#">Click here for more info</a>
 					</p>
 					<GS.MainButton href="#">Click Here</GS.MainButton>
-					<GS.FlexTwo>
+					<GS.FlexEven>
 						<div>Left 50%</div>
 						<div>Right 50%</div>
-					</GS.FlexTwo>
+					</GS.FlexEven>
 					<GS.FlexOneThree>
 						<div>Left 25%</div>
 						<div>Right 75%</div>
