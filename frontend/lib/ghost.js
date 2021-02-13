@@ -1,5 +1,4 @@
 import GhostContentAPI from '@tryghost/content-api';
-require('dotenv').config();
 
 const api = new GhostContentAPI({
 	url: process.env.GHOST_URL,
