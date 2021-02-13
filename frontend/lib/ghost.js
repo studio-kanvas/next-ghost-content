@@ -1,8 +1,8 @@
 import GhostContentAPI from '@tryghost/content-api';
 
 const api = new GhostContentAPI({
-	url: process.env.ghost_url,
-	key: process.env.ghost_key,
+	url: 'https://fromthegroundup.ghost.io',
+	key: '25f3b558c4af79898493084d46',
 	version: 'v3',
 });
 
@@ -20,7 +20,7 @@ export async function getPosts() {
 export async function getTags() {
 	try {
 		const response = await fetch(
-			`${process.env.ghost_url}/ghost/api/v3/content/tags/?key=${process.env.ghost_key}`
+			`${process.env.GHOST_URL}/ghost/api/v3/content/tags/?key=${process.env.GHOST_KEY}`
 		);
 		const data = await response.json();
 		return data;
