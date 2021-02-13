@@ -15,7 +15,7 @@ export default function Academy({ tags, posts }) {
 				<GS.MaxContainer>
 					<GS.YCPadding padding={'5rem'}>
 						<Title title="The Latest" />
-						<Bloggy posts={posts} />
+						{/* <Bloggy posts={posts} /> */}
 					</GS.YCPadding>
 				</GS.MaxContainer>
 			</Layout>
