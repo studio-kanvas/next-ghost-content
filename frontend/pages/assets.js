@@ -8,7 +8,7 @@ export default function Assets() {
 	return (
 		<>
 			<Layout>
-				<Hero message={'Assets'} />
+				<Hero message={'Assets/Service Offering'} background={`url('/ftgu-assets.webp')`} />
 				<GS.MaxContainer>
 					<Grid>
 						<div>
@@ -104,6 +104,7 @@ export default function Assets() {
 
 const Grid = styled(GS.GridThree)`
 	grid-template-columns: repeat(3, 1fr);
+	padding: 5rem 0rem;
 	@media screen and (max-width: 900px) {
 		grid-template-columns: repeat(2, 1fr);
 	}

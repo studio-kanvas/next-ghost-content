@@ -5,6 +5,7 @@ import Hero from '../components/hero';
 import Email from '../components/email';
 import Title from '../components/title';
 import Link from 'next/link';
+import Grid from '../components/grid';
 import { getPosts } from '../lib/ghost';
 import { HOMEPAGE } from '../data/homepage';
 
@@ -42,12 +43,7 @@ export default function Home({ posts }) {
 						<Main>
 							<GS.MaxContainer>
 								<Title title="Resources" />
-								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero corporis
-									sequi suscipit quod, adipisci nam iste labore inventore aut saepe fuga
-									repudiandae voluptatum deleniti eligendi ad consectetur, culpa nulla
-									numquam.
-								</p>
+								<Grid />
 								<Title title="Related Stories" />
 								<GS.YPadding />
 								{posts.map((post) => {
@@ -100,28 +96,6 @@ export async function getStaticProps(context) {
 	};
 }
 
-// export async function getStaticProps({ context }) {
-// 	async function getAllPosts() {
-// 		try {
-// 			const response = await fetch(
-// 				`${process.env.GHOST_URL}/ghost/api/v3/content/posts/?key=${process.env.GHOST_KEY}&limit=3&include=authors,tags`
-// 			);
-// 			const data = await response.json();
-// 			return data;
-// 		} catch (error) {
-// 			console.log(error);
-// 		}
-// 	}
-
-// 	const posts = await getAllPosts();
-
-// 	return {
-// 		props: {
-// 			posts,
-// 		},
-// 	};
-// }
-
 const Stories = styled(GS.FlexEven)`
 	gap: 2.5rem;
 	padding: 2rem 0rem;
@@ -143,3 +117,25 @@ const Stories = styled(GS.FlexEven)`
 		}
 	}
 `;
+
+// export async function getStaticProps({ context }) {
+// 	async function getAllPosts() {
+// 		try {
+// 			const response = await fetch(
+// 				`${process.env.GHOST_URL}/ghost/api/v3/content/posts/?key=${process.env.GHOST_KEY}&limit=3&include=authors,tags`
+// 			);
+// 			const data = await response.json();
+// 			return data;
+// 		} catch (error) {
+// 			console.log(error);
+// 		}
+// 	}
+
+// 	const posts = await getAllPosts();
+
+// 	return {
+// 		props: {
+// 			posts,
+// 		},
+// 	};
+// }

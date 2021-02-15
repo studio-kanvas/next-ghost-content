@@ -30,9 +30,6 @@ export const Navigation = styled.nav`
 				display: inline;
 				padding: 1rem;
 				color: #eee;
-				&:nth-last-child(1) {
-					padding: 0;
-				}
 				a,
 				a:visited {
 					color: #eee;
