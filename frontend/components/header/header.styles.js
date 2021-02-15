@@ -22,6 +22,9 @@ export const Navigation = styled.nav`
 	padding: 1.5rem 0rem;
 	div {
 		flex: 1;
+		.logo {
+			max-width: 20rem;
+		}
 	}
 	div:nth-child(2) {
 		text-align: right;

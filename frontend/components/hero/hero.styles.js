@@ -21,6 +21,11 @@ export const Message = styled.div`
 	}
 `;
 
+export const Description = styled.p`
+	font-size: 2.4rem;
+	color: #fff;
+`;
+
 export const Tags = styled.ul`
 	margin-top: 2.5rem;
 	li {

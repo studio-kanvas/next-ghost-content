@@ -11,6 +11,10 @@ const Header = () => {
 				<title>{title}</title>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta
+					name="description"
+					content="From The Ground Up Academy is an online training platform for creative entrepreneurs looking to build a brand and impact the world."
+				/>
 				<link rel="preconnect" href="https://fonts.gstatic.com" />
 				<link
 					href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;700&display=swap"
@@ -21,7 +25,11 @@ const Header = () => {
 				<GS.MaxContainer>
 					<S.Navigation>
 						<div>
-							<img src="https://via.placeholder.com/100x50" alt="Logo" />
+							<Link href="/">
+								<a>
+									<img src={'/ftgu-logo.svg'} alt="Logo" className="logo" />
+								</a>
+							</Link>
 						</div>
 						<div>
 							<ul>

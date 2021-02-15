@@ -3,15 +3,28 @@ import * as GS from '../../styles/global';
 import Link from 'next/link';
 import { IoIosArrowDown } from 'react-icons/io';
 
-const Hero = ({ message, href, link, arrow, background, height, tags, postAuthor, postTag, createdAt }) => {
+const Hero = ({
+	message,
+	description,
+	href,
+	link,
+	arrow,
+	background,
+	height,
+	tags,
+	postAuthor,
+	postTag,
+	createdAt,
+}) => {
 	return (
 		<S.HeroBackground background={background} height={height}>
 			<GS.MaxContainer>
 				<S.Message>
 					{/* If hero has CTA button */}
 					<h1>{message}</h1>
-					{href && (
-						<Link href={href} passHref>
+					{description && <S.Description>{description}</S.Description>}
+					{link && (
+						<Link href={href ? href : ''} passHref>
 							<GS.SecondaryButton>{link}</GS.SecondaryButton>
 						</Link>
 					)}
