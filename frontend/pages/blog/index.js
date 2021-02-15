@@ -9,8 +9,6 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Link from 'next/link';
 
-let page = 1;
-
 export default function Blog({ posts }) {
 	const pagination = posts.meta.pagination;
 	const router = useRouter();
@@ -25,17 +23,15 @@ export default function Blog({ posts }) {
 						<Bloggy posts={posts.posts} />
 						<Pagination>
 							<div className="next">
-								{page != 1 && (
-									<Link href={`/blog/pages/${page - 1}`}>
-										<a>Next {pagination.next}</a>
-									</Link>
-								)}
+								<Link href={`/blog/pages/}`}>
+									<a>Next {pagination.next}</a>
+								</Link>
 							</div>
 							<div className="pages">
 								Current: {pagination.page} Total: {pagination.pages}
 							</div>
 							<div className="prev">
-								<Link href={`/blog/pages/${page + 1}`}>
+								<Link href={`/blog/pages/`}>
 									<a>Prev {pagination.prev}</a>
 								</Link>
 							</div>
@@ -51,7 +47,7 @@ export async function getStaticProps({ context }) {
 	async function getAllPosts() {
 		try {
 			const response = await fetch(
-				`${process.env.GHOST_URL}/ghost/api/v3/content/posts/?key=${process.env.GHOST_KEY}&limit=5&include=authors,tags&page=${page}`
+				`${process.env.GHOST_URL}/ghost/api/v3/content/posts/?key=${process.env.GHOST_KEY}&limit=5&include=authors,tags`
 			);
 			const data = await response.json();
 			return data;
