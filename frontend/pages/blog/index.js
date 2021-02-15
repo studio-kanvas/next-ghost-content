@@ -4,6 +4,7 @@ import * as GS from '../../styles/global';
 import Hero from '../../components/hero';
 import Title from '../../components/title';
 import Bloggy from '../../components/bloggy';
+import { getAllPosts } from '../../lib/ghost';
 import Link from 'next/link';
 
 export default function Blog({ posts }) {
@@ -30,18 +31,6 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps({ context }) {
-	async function getAllPosts() {
-		try {
-			const response = await fetch(
-				`${process.env.GHOST_URL}/ghost/api/v3/content/posts/?key=${process.env.GHOST_KEY}&limit=5&include=authors,tags`
-			);
-			const data = await response.json();
-			return data;
-		} catch (error) {
-			console.log(error);
-		}
-	}
-
 	const posts = await getAllPosts();
 
 	return {
