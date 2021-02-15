@@ -5,8 +5,6 @@ import Bloggy from '../../../components/bloggy';
 import * as GS from '../../../styles/global';
 
 export default function Slug({ post }) {
-	console.log(post);
-
 	const timeConvert = (time) => {
 		time = time.slice(0, 10);
 		return time;

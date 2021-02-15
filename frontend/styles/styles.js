@@ -42,6 +42,9 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: underline;
     }
+    pre {
+        white-space: pre-wrap;
+    }
 `;
 
 export default GlobalStyle;

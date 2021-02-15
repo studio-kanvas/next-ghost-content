@@ -9,7 +9,6 @@ const Bloggy = ({ posts, post }) => {
 		time = time.slice(0, 10);
 		return time;
 	};
-
 	return (
 		<S.BlogContainer>
 			{/* Left Side */}
@@ -35,7 +34,6 @@ const Bloggy = ({ posts, post }) => {
 							</Link>
 						);
 					})}
-
 				{post && (
 					<S.Article>
 						<img src={post.feature_image} alt={`From The Ground Up - ${post.title}`} />
