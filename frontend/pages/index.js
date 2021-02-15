@@ -5,6 +5,7 @@ import Hero from '../components/hero';
 import Email from '../components/email';
 import Title from '../components/title';
 import Link from 'next/link';
+import { getPosts } from '../lib/ghost';
 import { HOMEPAGE } from '../data/homepage';
 
 const Main = styled.div`
@@ -12,7 +13,6 @@ const Main = styled.div`
 `;
 
 export default function Home({ posts }) {
-	console.log(posts.posts);
 	return (
 		<>
 			<Layout>
@@ -50,7 +50,7 @@ export default function Home({ posts }) {
 								</p>
 								<Title title="Related Stories" />
 								<GS.YPadding />
-								{posts.posts.map((post) => {
+								{posts.map((post) => {
 									return (
 										<Stories key={post.id}>
 											<div className="photo">
@@ -61,9 +61,9 @@ export default function Home({ posts }) {
 											</div>
 											<div className="content">
 												<div>
-													{post.tags.map((tag, index) => {
+													{post.tags.map((tag) => {
 														return (
-															<Link href={`blog/${tag.slug}`} key={tag.id}>
+															<Link href={`/blog/${tag.slug}`} key={tag.id}>
 																<a>{tag.name}</a>
 															</Link>
 														);
@@ -86,27 +86,41 @@ export default function Home({ posts }) {
 	);
 }
 
-export async function getStaticProps({ context }) {
-	async function getAllPosts() {
-		try {
-			const response = await fetch(
-				`${process.env.GHOST_URL}/ghost/api/v3/content/posts/?key=${process.env.GHOST_KEY}&limit=3&include=authors,tags`
-			);
-			const data = await response.json();
-			return data;
-		} catch (error) {
-			console.log(error);
-		}
+export async function getStaticProps(context) {
+	const posts = await getPosts();
+
+	if (!posts) {
+		return {
+			notFound: true,
+		};
 	}
 
-	const posts = await getAllPosts();
-
 	return {
-		props: {
-			posts,
-		},
+		props: { posts },
 	};
 }
+
+// export async function getStaticProps({ context }) {
+// 	async function getAllPosts() {
+// 		try {
+// 			const response = await fetch(
+// 				`${process.env.GHOST_URL}/ghost/api/v3/content/posts/?key=${process.env.GHOST_KEY}&limit=3&include=authors,tags`
+// 			);
+// 			const data = await response.json();
+// 			return data;
+// 		} catch (error) {
+// 			console.log(error);
+// 		}
+// 	}
+
+// 	const posts = await getAllPosts();
+
+// 	return {
+// 		props: {
+// 			posts,
+// 		},
+// 	};
+// }
 
 const Stories = styled(GS.FlexEven)`
 	gap: 2.5rem;

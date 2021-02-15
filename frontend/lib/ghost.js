@@ -6,6 +6,17 @@ const api = new GhostContentAPI({
 	version: 'v3',
 });
 
+export async function getPosts() {
+	return await api.posts
+		.browse({
+			limit: '3',
+			include: 'tags,authors',
+		})
+		.catch((err) => {
+			console.error(err);
+		});
+}
+
 export async function getAllPosts() {
 	try {
 		const response = await fetch(
