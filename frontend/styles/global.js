@@ -119,6 +119,7 @@ export const SmContainer = styled.div`
 export const FullWidth = styled.div`
 	width: 100%;
 	margin: 0 auto;
+	background: ${(props) => (props.background ? props.background : null)};
 `;
 
 //flex 50/50 split

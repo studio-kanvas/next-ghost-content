@@ -26,7 +26,11 @@ export const FooterInformation = styled(GS.FlexEven)`
 				padding: 0.5rem 0rem;
 				a {
 					text-decoration: none;
-					color: #fff;
+					color: #eee;
+					&.active {
+						color: #fff;
+						font-weight: bold;
+					}
 				}
 			}
 		}

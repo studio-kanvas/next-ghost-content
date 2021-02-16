@@ -2,9 +2,12 @@ import Link from 'next/link';
 import Head from 'next/head';
 import * as S from './header.styles';
 import * as GS from '../../styles/global';
+import { LINKS } from '../../data/links';
+import { useRouter } from 'next/router';
 
 const Header = () => {
 	const title = 'Hello Next!';
+	const router = useRouter();
 	return (
 		<>
 			<Head>
@@ -33,31 +36,17 @@ const Header = () => {
 						</div>
 						<div>
 							<ul>
-								<li>
-									<Link href="/">
-										<a>Home</a>
-									</Link>
-								</li>
-								<li>
-									<Link href="/academy">
-										<a>Academy</a>
-									</Link>
-								</li>
-								<li>
-									<Link href="/mission">
-										<a>Mission</a>
-									</Link>
-								</li>
-								<li>
-									<Link href="/blog">
-										<a>Blog</a>
-									</Link>
-								</li>
-								<li>
-									<Link href="/assets">
-										<a>Assets</a>
-									</Link>
-								</li>
+								{LINKS.map((link) => {
+									return (
+										<li key={link.title}>
+											<Link href={link.link}>
+												<a className={router.pathname === link.link && 'active'}>
+													{link.title}
+												</a>
+											</Link>
+										</li>
+									);
+								})}
 							</ul>
 						</div>
 					</S.Navigation>

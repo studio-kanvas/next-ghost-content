@@ -15,7 +15,6 @@ export default function Academy() {
 					background={ACADEMY.first.background}
 					link={ACADEMY.first.link}
 					href={ACADEMY.first.href}
-					arrow
 				/>
 				<GS.MaxContainer>
 					<GS.YCPadding padding={'5rem'}>

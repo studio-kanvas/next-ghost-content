@@ -4,9 +4,11 @@ import Image from 'next/image';
 import * as GS from '../../styles/global';
 import * as S from './footer.styles';
 import { LINKS } from '../../data/links';
+import { useRouter } from 'next/router';
 
 const Footer = () => {
 	const year = new Date().getFullYear();
+	const router = useRouter();
 	return (
 		<>
 			<S.FooterBg>
@@ -18,7 +20,11 @@ const Footer = () => {
 								{LINKS.map((link) => {
 									return (
 										<li key={link.title}>
-											<Link href={link.link}>{link.title}</Link>
+											<Link href={link.link}>
+												<a className={router.pathname === link.link && 'active'}>
+													{link.title}
+												</a>
+											</Link>
 										</li>
 									);
 								})}

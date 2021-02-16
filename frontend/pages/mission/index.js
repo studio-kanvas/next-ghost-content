@@ -20,23 +20,26 @@ export default function Home({ posts }) {
 					}
 					background={`url('/ftgu-mission-1m.jpg')`}
 					link={'Learn More'}
-					href={'#'}
+					href={'/mission/100m'}
+					height={'100vh'}
 				/>
 				<Hero
 					message={'Bring Clarity to Business'}
 					description={
 						'Making it easy to equip entrepreneurs to win through a tailored online approach.'
 					}
-					background={`url('/ftgu-mission-1m.jpg')`}
+					background={`url('/ftgu-mission-clarity.jpg')`}
 					link={'Coming Soon'}
+					height={'100vh'}
 				/>
 				<Hero
 					message={'Changing the Landscape'}
 					description={
 						'Work with global brands and businesses to change the way entrepreneurs start and grow their brands.'
 					}
-					background={`url('/ftgu-mission-1m.jpg')`}
+					background={`url('/ftgu-mission-landscape.jpg')`}
 					link={'Coming Soon'}
+					height={'100vh'}
 				/>
 			</Layout>
 		</>

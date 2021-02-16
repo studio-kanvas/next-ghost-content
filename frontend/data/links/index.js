@@ -11,6 +11,10 @@ export const LINKS = [
 		link: '/academy',
 	},
 	{
+		title: 'Mission',
+		link: '/mission',
+	},
+	{
 		title: 'Blog',
 		link: '/blog',
 	},
