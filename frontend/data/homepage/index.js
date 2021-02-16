@@ -2,7 +2,7 @@ export const HOMEPAGE = {
 	//first hero component
 	first: {
 		header: 'We bring clarity to entrepreneurs and equip them to build brands that impact the world.',
-		background: `url('/ftgu-our-goal.jpg')`,
+		background: `url('/ftgu-our-goal.webp')`,
 		link: 'Learn More',
 		href: '/',
 		height: '100vh',
