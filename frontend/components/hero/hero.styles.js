@@ -17,7 +17,7 @@ export const Message = styled.div`
 	text-align: center;
 	margin: 0 auto;
 	h1 {
-		color: #fff;
+		color: #ffffff;
 	}
 `;
 
