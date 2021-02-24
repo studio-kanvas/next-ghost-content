@@ -6,10 +6,10 @@ import Title from '../title';
 export default function SidebarMail() {
 	return (
 		<S.Form>
-			<h3>Have email delivered to your inbox.</h3>
+			<h3>Join the Community</h3>
 			<p>
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum sed voluptatem eveniet
-				temporibus dolore ipsam odio quisquam ab pariatur modi!
+				Make an impact with weekly insight, PDF’s and exclusive content Join 50,000+ entrepreneurs who
+				are taking action in our community by joining our newsletter.
 			</p>
 			<div className="name">
 				<input placeholder="First Name" type="text" required />

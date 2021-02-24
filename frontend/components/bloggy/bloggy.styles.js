@@ -2,16 +2,21 @@ import styled from 'styled-components';
 import * as GS from '../../styles/global';
 import { motion } from 'framer-motion';
 
+const RESPONSIVE = '900px';
+
 export const BlogContainer = styled(GS.FlexEven)`
 	align-items: stretch;
 	justify-content: center;
-	margin-top: 7rem;
+	margin: 7rem 0rem 5rem 0rem;
 	gap: 3rem;
 	& > article:nth-child(1) {
 		flex: 2;
 	}
 	& > article:nth-child(2) {
 		flex: 0.75;
+	}
+	@media screen and (max-width: ${RESPONSIVE}) {
+		display: block;
 	}
 `;
 
@@ -86,12 +91,27 @@ export const FeaturedArticles = styled.article`
 	}
 `;
 
+export const FlexArticles = styled.div`
+	display: block;
+	@media screen and (max-width: ${RESPONSIVE}) {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media screen and (max-width: 550px) {
+		display: block;
+	}
+`;
+
 export const TopBlogs = styled(GS.FlexEven)`
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 3.5rem;
+	@media screen and (max-width: ${RESPONSIVE}) {
+		align-items: flex-start;
+	}
 	& > div:nth-child(1) {
-		flex: 1;
+		flex: 0.75;
 		a img {
 			width: 8rem;
 			height: 8rem;
@@ -102,7 +122,7 @@ export const TopBlogs = styled(GS.FlexEven)`
 	& > div:nth-child(2) {
 		position: relative;
 		bottom: 0.5rem;
-		margin-left: 0.25rem;
+		margin-left: 1rem;
 		flex: 2.5;
 		.tag {
 			padding-top: 0.75rem;

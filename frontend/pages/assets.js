@@ -12,7 +12,7 @@ export default function Assets() {
 				<GS.MaxContainer>
 					<Grid>
 						<div>
-							<img src="https://picsum.photos/200/300" />
+							<img src={'/assets/ftgu-adobe.jpg'} alt="Adobe Creative Cloud" />
 							<div>
 								<div className="container">
 									<h2>Build an online Store</h2>
@@ -26,7 +26,7 @@ export default function Assets() {
 							</div>
 						</div>
 						<div>
-							<img src="https://picsum.photos/200/300" />
+							<img src={'/assets/ftgu-apliiq.jpg'} alt="Apliiq" />
 							<div>
 								<div className="container">
 									<h2>Build an online Store</h2>
@@ -40,7 +40,7 @@ export default function Assets() {
 							</div>
 						</div>
 						<div>
-							<img src="https://picsum.photos/200/300" />
+							<img src={'/assets/ftgu-bella-canvas.jpg'} alt="Bella Canvas" />
 							<div>
 								<div className="container">
 									<h2>Build an online Store</h2>
@@ -54,7 +54,7 @@ export default function Assets() {
 							</div>
 						</div>
 						<div>
-							<img src="https://picsum.photos/200/300" />
+							<img src={'/assets/ftgu-bluehost.jpg'} alt="Bluehost" />
 							<div>
 								<div className="container">
 									<h2>Build an online Store</h2>
@@ -68,7 +68,7 @@ export default function Assets() {
 							</div>
 						</div>
 						<div>
-							<img src="https://picsum.photos/200/300" />
+							<img src={'/assets/ftgu-deep-setinel.jpg'} alt="Deep Sentinel" />
 							<div>
 								<div className="container">
 									<h2>Build an online Store</h2>
@@ -82,7 +82,147 @@ export default function Assets() {
 							</div>
 						</div>
 						<div>
-							<img src="https://picsum.photos/200/300" />
+							<img src={'/assets/ftgu-envato.jpg'} alt="Envato Element" />
+							<div>
+								<div className="container">
+									<h2>Build an online Store</h2>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam,
+										provident eaque ullam labore facilis perspiciatis voluptatem eum ex
+										rem enim.
+									</p>
+									<GS.MainButton>Learn More</GS.MainButton>
+								</div>
+							</div>
+						</div>
+						<div>
+							<img src={'/assets/ftgu-fiverr.jpg'} alt="Fiverr" />
+							<div>
+								<div className="container">
+									<h2>Build an online Store</h2>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam,
+										provident eaque ullam labore facilis perspiciatis voluptatem eum ex
+										rem enim.
+									</p>
+									<GS.MainButton>Learn More</GS.MainButton>
+								</div>
+							</div>
+						</div>
+						<div>
+							<img src={'/assets/ftgu-heatpress-nation.jpg'} alt="Heatpress Nation" />
+							<div>
+								<div className="container">
+									<h2>Build an online Store</h2>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam,
+										provident eaque ullam labore facilis perspiciatis voluptatem eum ex
+										rem enim.
+									</p>
+									<GS.MainButton>Learn More</GS.MainButton>
+								</div>
+							</div>
+						</div>
+						<div>
+							<img src={'/assets/ftgu-nevada-grow.jpg'} alt="Nevada Grow" />
+							<div>
+								<div className="container">
+									<h2>Build an online Store</h2>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam,
+										provident eaque ullam labore facilis perspiciatis voluptatem eum ex
+										rem enim.
+									</p>
+									<GS.MainButton>Learn More</GS.MainButton>
+								</div>
+							</div>
+						</div>
+						<div>
+							<img src={'/assets/ftgu-omniprint.jpg'} alt="Omniprint" />
+							<div>
+								<div className="container">
+									<h2>Build an online Store</h2>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam,
+										provident eaque ullam labore facilis perspiciatis voluptatem eum ex
+										rem enim.
+									</p>
+									<GS.MainButton>Learn More</GS.MainButton>
+								</div>
+							</div>
+						</div>
+						<div>
+							<img src={'/assets/ftgu-placeit.jpg'} alt="Placeit" />
+							<div>
+								<div className="container">
+									<h2>Build an online Store</h2>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam,
+										provident eaque ullam labore facilis perspiciatis voluptatem eum ex
+										rem enim.
+									</p>
+									<GS.MainButton>Learn More</GS.MainButton>
+								</div>
+							</div>
+						</div>
+						<div>
+							<img src={'/assets/ftgu-rocket-lawyer.jpg'} alt="Rocket Lawyer" />
+							<div>
+								<div className="container">
+									<h2>Build an online Store</h2>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam,
+										provident eaque ullam labore facilis perspiciatis voluptatem eum ex
+										rem enim.
+									</p>
+									<GS.MainButton>Learn More</GS.MainButton>
+								</div>
+							</div>
+						</div>
+						<div>
+							<img src={'/assets/ftgu-sba.jpg'} alt="SBA.gov" />
+							<div>
+								<div className="container">
+									<h2>Build an online Store</h2>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam,
+										provident eaque ullam labore facilis perspiciatis voluptatem eum ex
+										rem enim.
+									</p>
+									<GS.MainButton>Learn More</GS.MainButton>
+								</div>
+							</div>
+						</div>
+						<div>
+							<img src={'/assets/ftgu-shopify.jpg'} alt="Shopify" />
+							<div>
+								<div className="container">
+									<h2>Build an online Store</h2>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam,
+										provident eaque ullam labore facilis perspiciatis voluptatem eum ex
+										rem enim.
+									</p>
+									<GS.MainButton>Learn More</GS.MainButton>
+								</div>
+							</div>
+						</div>
+						<div>
+							<img src={'/assets/ftgu-supacolor.jpg'} alt="Supacolor" />
+							<div>
+								<div className="container">
+									<h2>Build an online Store</h2>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam,
+										provident eaque ullam labore facilis perspiciatis voluptatem eum ex
+										rem enim.
+									</p>
+									<GS.MainButton>Learn More</GS.MainButton>
+								</div>
+							</div>
+						</div>
+						<div>
+							<img src={'/assets/ftgu-uninet.jpg'} alt="Uninet" />
 							<div>
 								<div className="container">
 									<h2>Build an online Store</h2>
@@ -120,6 +260,10 @@ const Grid = styled(GS.GridThree)`
 			width: 100%;
 			height: 26rem;
 			object-fit: cover;
+			border-left: 0.1rem solid #ccc;
+			border-top: 0.1rem solid #ccc;
+			border-right: 0.1rem solid #ccc;
+			box-sizing: border-box;
 		}
 		.container {
 			padding: 1.5rem 2.5rem;

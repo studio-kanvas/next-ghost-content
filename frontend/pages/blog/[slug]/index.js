@@ -1,10 +1,10 @@
 import Layout from '../../../components/layout/layout';
-import { getAuthor, getSinglePost } from '../../../lib/ghost';
+import { getPosts, getSinglePost } from '../../../lib/ghost';
 import Hero from '../../../components/hero';
 import Bloggy from '../../../components/bloggy';
 import * as GS from '../../../styles/global';
 
-export default function Slug({ post }) {
+export default function Slug({ post, posts }) {
 	const timeConvert = (time) => {
 		time = time.slice(0, 10);
 		return time;
@@ -20,7 +20,7 @@ export default function Slug({ post }) {
 				createdAt={timeConvert(post.created_at)}
 			/>
 			<GS.MaxContainer>
-				<Bloggy post={post} />
+				<Bloggy post={post} topPosts={posts} />
 			</GS.MaxContainer>
 		</Layout>
 	);
@@ -35,6 +35,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
 	const post = await getSinglePost(context.params.slug);
+	const posts = await getPosts();
+
 	if (!post) {
 		return {
 			notFound: true,
@@ -42,6 +44,6 @@ export async function getStaticProps(context) {
 	}
 
 	return {
-		props: { post },
+		props: { post, posts },
 	};
 }

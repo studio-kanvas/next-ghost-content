@@ -46,14 +46,14 @@ export const Form = styled.div`
 	}
 `;
 
-export const FormContainer = styled.form`
+export const FormContainer = styled.div`
 	display: flex;
-	gap: 5rem;
+	gap: 1rem;
 	.name {
 		flex: 1;
 	}
 	.email {
-		flex: 1.75;
+		flex: 1.25;
 	}
 	.submit-button {
 		flex: 1;
@@ -65,13 +65,17 @@ export const FormContainer = styled.form`
 			margin-right: 1rem;
 			width: 100%;
 		}
-		button {
-			background: #f84f49;
-			padding: 1.2rem 3rem;
+		.submit-button {
+			background: ${(props) => props.theme.colors.primary};
+			padding: 1.15rem 3rem;
 			font-weight: bold;
 			color: #fff;
 			width: 100%;
 			border: 0;
+			font-family: ${(props) => props.theme.fonts.header};
+			&:hover {
+				cursor: pointer;
+			}
 		}
 	}
 	@media screen and (max-width: ${(props) => props.theme.smWidth}) {

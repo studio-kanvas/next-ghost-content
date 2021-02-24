@@ -8,14 +8,12 @@ export default function Grid() {
 			{HOMEPAGE.grid.map((item) => {
 				const { title, description, background } = item;
 				return (
-					<S.GridItemContainer key={title}>
-						<S.GridItem background={background}>
-							<div>
-								<h4>{title}</h4>
-								<p>{description}</p>
-							</div>
-						</S.GridItem>
-					</S.GridItemContainer>
+					<S.GridItem background={background} key={title}>
+						<div className="content">
+							<h4>{title}</h4>
+							<p>{description}</p>
+						</div>
+					</S.GridItem>
 				);
 			})}
 		</S.Grid>

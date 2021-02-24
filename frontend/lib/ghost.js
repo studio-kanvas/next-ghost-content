@@ -9,7 +9,7 @@ const api = new GhostContentAPI({
 export async function getPosts() {
 	return await api.posts
 		.browse({
-			limit: '3',
+			limit: '5',
 			include: 'tags,authors',
 		})
 		.catch((err) => {
@@ -17,10 +17,10 @@ export async function getPosts() {
 		});
 }
 
-export async function getAllPosts() {
+export async function getAllPosts(page) {
 	try {
 		const response = await fetch(
-			`${process.env.GHOST_URL}/ghost/api/v3/content/posts/?key=${process.env.GHOST_KEY}&limit=5&include=authors,tags`
+			`${process.env.GHOST_URL}/ghost/api/v3/content/posts/?key=${process.env.GHOST_KEY}&limit=5&include=authors,tags&page=${page}`
 		);
 		const data = await response.json();
 		return data;

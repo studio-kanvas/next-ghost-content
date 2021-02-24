@@ -127,9 +127,6 @@ export const FlexEven = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	@media screen and (max-width: ${(props) => props.theme.midWidth}) {
-		display: block;
-	}
 	div {
 		flex: 1;
 	}
@@ -210,6 +207,7 @@ export const MainButton = styled(motion.a)`
 	margin: 1rem 0rem;
 	&:hover {
 		background: ${(props) => props.theme.colors.primary};
+		box-shadow: 0.5rem 0.5rem 0 #222;
 		text-decoration: none;
 		cursor: pointer;
 		color: #fff;
@@ -343,4 +341,38 @@ export const Arrow = styled.div`
 	left: 50%;
 	transform: translate(-50%, 0%);
 	animation: ${ArrowAnimation} 2s ease-in-out infinite;
+`;
+
+export const Pagination = styled(FlexEven)`
+	.next,
+	.prev {
+		flex: 1;
+		&:hover {
+			cursor: pointer;
+		}
+		span {
+			border: 0.25rem solid #000;
+			padding: 0.5rem 1rem;
+			transition: all 0.25s ease-in-out;
+			font-size: 2.5rem;
+			font-family: ${(props) => props.theme.fonts.header};
+			svg {
+				position: relative;
+				top: 0.3rem;
+				width: 2rem;
+			}
+			&:hover {
+				background: #000;
+				color: #fff;
+				box-shadow: 0.5rem 0.5rem 0 #333;
+			}
+		}
+	}
+	.prev {
+		text-align: right;
+	}
+	.pages {
+		flex: 1;
+		text-align: center;
+	}
 `;

@@ -40,7 +40,11 @@ const Header = () => {
 									return (
 										<li key={link.title}>
 											<Link href={link.link}>
-												<a className={router.pathname === link.link && 'active'}>
+												<a
+													className={
+														router.pathname === link.link ? 'active' : undefined
+													}
+												>
 													{link.title}
 												</a>
 											</Link>

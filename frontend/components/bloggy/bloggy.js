@@ -4,7 +4,8 @@ import SidebarMail from '../sidebarmail';
 import Link from 'next/link';
 import Title from '../title';
 
-const Bloggy = ({ posts, post }) => {
+const Bloggy = ({ posts, post, topPosts }) => {
+	console.log(topPosts);
 	const timeConvert = (time) => {
 		time = time.slice(0, 10);
 		return time;
@@ -49,38 +50,78 @@ const Bloggy = ({ posts, post }) => {
 			{/* Right Side */}
 			<S.FeaturedArticles>
 				<Title title="Top Articles" />
-				{posts &&
-					posts.map((post) => {
-						return (
-							<S.TopBlogs key={post.feature_image}>
-								<div>
-									<Link href={`/blog/${encodeURIComponent(post.slug)}`} key={post.excerpt}>
-										<a>
-											<img src={post.feature_image} />
-										</a>
-									</Link>
-								</div>
-								<div>
-									<div>{post.title}</div>
-									<ul className="tag">
-										{post.tags.map((tag) => {
-											return (
-												<li key={tag.id}>
-													<Link
-														href={`/blog/${encodeURIComponent(tag.slug)}`}
-														key={post.excerpt}
-													>
-														<a>{tag.name}</a>
-													</Link>
-												</li>
-											);
-										})}
-									</ul>
-									<div className="updated">Updated {timeConvert(post.updated_at)}</div>
-								</div>
-							</S.TopBlogs>
-						);
-					})}
+				<S.FlexArticles>
+					{posts &&
+						posts.map((post) => {
+							return (
+								<S.TopBlogs key={post.feature_image}>
+									<div>
+										<Link
+											href={`/blog/${encodeURIComponent(post.slug)}`}
+											key={post.excerpt}
+										>
+											<a>
+												<img src={post.feature_image} />
+											</a>
+										</Link>
+									</div>
+									<div>
+										<div>{post.title}</div>
+										<ul className="tag">
+											{post.tags.map((tag) => {
+												return (
+													<li key={tag.id}>
+														<Link
+															href={`/blog/${encodeURIComponent(tag.slug)}`}
+															key={post.excerpt}
+														>
+															<a>{tag.name}</a>
+														</Link>
+													</li>
+												);
+											})}
+										</ul>
+										<div className="updated">Updated {timeConvert(post.updated_at)}</div>
+									</div>
+								</S.TopBlogs>
+							);
+						})}
+					{topPosts &&
+						topPosts.map((post) => {
+							return (
+								<S.TopBlogs key={post.feature_image}>
+									<div>
+										<Link
+											href={`/blog/${encodeURIComponent(post.slug)}`}
+											key={post.excerpt}
+										>
+											<a>
+												<img src={post.feature_image} />
+											</a>
+										</Link>
+									</div>
+									<div>
+										<div>{post.title}</div>
+										<ul className="tag">
+											{post.tags.map((tag) => {
+												return (
+													<li key={tag.id}>
+														<Link
+															href={`/blog/${encodeURIComponent(tag.slug)}`}
+															key={post.excerpt}
+														>
+															<a>{tag.name}</a>
+														</Link>
+													</li>
+												);
+											})}
+										</ul>
+										<div className="updated">Updated {timeConvert(post.updated_at)}</div>
+									</div>
+								</S.TopBlogs>
+							);
+						})}
+				</S.FlexArticles>
 				<SidebarMail />
 			</S.FeaturedArticles>
 		</S.BlogContainer>

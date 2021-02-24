@@ -14,6 +14,7 @@ const Main = styled.div`
 `;
 
 export default function Home({ posts }) {
+	console.log(posts);
 	return (
 		<>
 			<Layout>
@@ -44,16 +45,23 @@ export default function Home({ posts }) {
 							<GS.MaxContainer>
 								<Title title="Resources" />
 								<Grid />
-								<Title title="Related Stories" />
+								<Title title="Related Stories" text="Read More" href={`/blog`} />
 								<GS.YPadding />
 								{posts.map((post) => {
 									return (
 										<Stories key={post.id}>
 											<div className="photo">
-												<img
-													src={post.feature_image}
-													alt={`From the Ground Up - ${post.title}`}
-												/>
+												<Link
+													href={`/blog/${encodeURIComponent(post.slug)}`}
+													key={post.excerpt}
+												>
+													<a>
+														<img
+															src={post.feature_image}
+															alt={`From the Ground Up - ${post.title}`}
+														/>
+													</a>
+												</Link>
 											</div>
 											<div className="content">
 												<div>
@@ -67,7 +75,15 @@ export default function Home({ posts }) {
 													| By <strong>{post.authors[0].name}</strong>
 												</div>
 												<div>
-													<h3>{post.excerpt}</h3>
+													<Link
+														href={`/blog/${encodeURIComponent(post.slug)}`}
+														key={post.excerpt}
+													>
+														<a>
+															<h3>{post.title}</h3>
+															<p>{post.excerpt}</p>
+														</a>
+													</Link>
 												</div>
 											</div>
 										</Stories>
@@ -92,13 +108,21 @@ export async function getStaticProps(context) {
 	}
 
 	return {
-		props: { posts },
+		props: {
+			posts,
+		},
 	};
 }
 
 const Stories = styled(GS.FlexEven)`
 	gap: 2.5rem;
-	padding: 2rem 0rem;
+	padding: 1.5rem 0rem;
+	@media screen and (max-width: 800px) {
+		align-items: flex-start;
+	}
+	@media screen and (max-width: 450px) {
+		display: block;
+	}
 	.photo {
 		flex: 1;
 		img {
@@ -110,32 +134,15 @@ const Stories = styled(GS.FlexEven)`
 		flex: 2;
 		h3 {
 			font-size: 2.5rem;
+			color: #222;
 		}
 		a {
 			color: #000;
 			text-decoration: none;
 		}
+		p {
+			margin-top: 0;
+			color: #333;
+		}
 	}
 `;
-
-// export async function getStaticProps({ context }) {
-// 	async function getAllPosts() {
-// 		try {
-// 			const response = await fetch(
-// 				`${process.env.GHOST_URL}/ghost/api/v3/content/posts/?key=${process.env.GHOST_KEY}&limit=3&include=authors,tags`
-// 			);
-// 			const data = await response.json();
-// 			return data;
-// 		} catch (error) {
-// 			console.log(error);
-// 		}
-// 	}
-
-// 	const posts = await getAllPosts();
-
-// 	return {
-// 		props: {
-// 			posts,
-// 		},
-// 	};
-// }

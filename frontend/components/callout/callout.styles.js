@@ -11,7 +11,19 @@ export const Call = styled(GS.FlexEven)`
 	}
 	.x {
 		font-size: 5rem;
-		font-weight: 300;
-		font-family: Verdana;
+		font-weight: 100;
+		opacity: 0.75;
+		position: relative;
+		top: 0.4rem;
+		font-family: Sans-serif;
+	}
+	@media screen and (max-width: 700px) {
+		display: block;
+		div {
+			padding: 3rem 0rem;
+		}
+		.x {
+			display: none;
+		}
 	}
 `;

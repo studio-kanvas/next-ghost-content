@@ -10,6 +10,7 @@ export const Form = styled.form`
 		text-align: center;
 	}
 	p {
+		margin-top: 0;
 		text-align: center;
 	}
 	input {

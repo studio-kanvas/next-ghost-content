@@ -46,12 +46,18 @@ export const SingleArticle = styled(GS.FlexEven)`
 	}
 	div,
 	a {
-		color: #ccc;
+		color: #eee;
 		font-size: 2.5rem;
 		font-family: ${(props) => props.theme.fonts.header};
 	}
 	a {
 		padding-right: 1rem;
 		text-decoration: none;
+	}
+	@media screen and (max-width: 1100px) {
+		display: block;
+		div {
+			padding: 1rem 0rem;
+		}
 	}
 `;

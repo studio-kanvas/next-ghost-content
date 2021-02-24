@@ -13,5 +13,14 @@ export const Flex = styled.div`
 		width: 15rem;
 		text-align: right;
 		margin-bottom: 1.25rem;
+		a {
+			font-size: 2rem;
+			font-family: ${(props) => props.theme.fonts.header};
+			text-decoration: none;
+			color: #333;
+			&:hover {
+				color: #000;
+			}
+		}
 	}
 `;

@@ -26,7 +26,7 @@ export default function Home({ posts }) {
 					</GS.MaxContainer>
 				</Header>
 				<FullWidth background={'#000'}>
-					<GS.MaxContainer>
+					<Container>
 						<Flex>
 							<div>
 								<h2>YouTube Videos</h2>
@@ -35,31 +35,57 @@ export default function Home({ posts }) {
 								<h2>Social Media Content</h2>
 							</div>
 						</Flex>
-						<p>
+						<p className="p-padding">
 							We serve those who are underserved and don’t have the money or the opportunity to
 							travel and learn an industry on their own. We take what we have learned over the
 							last decade of doing it, and open the doors for you to absorb that knowledge. Best
 							of all, it is free of charge. We only ask that you
 						</p>
 						<h2>Make An Impact</h2>
-						<p>
+						<p className="p-padding">
 							Your family, team and community are counting on you to succeed and we ask that you
 							pay it forward by building a brand that impacts your world. Share your journey and
 							story with us, for a chance to be highlighted in an upcoming series on the
 							channel.
 						</p>
 						<Grid>
-							<div>Space</div>
-							<div className="content">Content</div>
-							<div className="content">Content</div>
-							<div>Space</div>
-							<div>Space</div>
-							<div className="content">Content</div>
-							<div className="content">Content</div>
-							<div>Space</div>
+							<div>
+								<div className="spacer"></div>
+								<div className="content idea" />
+								<div className="spacer"></div>
+								<div className="content flex">
+									<div>
+										<h3>Development</h3>
+										<p>
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, odio.
+											Odit, tenetur minus rem aliquam cum unde eveniet eligendi,
+											repudiandae quasi similique, quidem numquam impedit nostrum
+											voluptate nihil recusandae architecto?
+										</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div className="content flex">
+									<div>
+										<h3>Idea &amp; Concept</h3>
+										<p>
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, odio.
+											Odit, tenetur minus rem aliquam cum unde eveniet eligendi,
+											repudiandae quasi similique, quidem numquam impedit nostrum
+											voluptate nihil recusandae architecto?
+										</p>
+									</div>
+								</div>
+								<div className="spacer"></div>
+								<div className="content dev" />
+								<div className="spacer"></div>
+							</div>
 						</Grid>
-						<GS.FlexEven>
-							<div>Picture</div>
+						<Flex>
+							<div>
+								<img src={'/ftgu-tourist.webp'} alt="" className="shadow" />
+							</div>
 							<div>
 								<h3>Share Your Story and Cause</h3>
 								<p>
@@ -67,22 +93,54 @@ export default function Home({ posts }) {
 									mission to the world. @johnxsantos
 								</p>
 							</div>
-						</GS.FlexEven>
-					</GS.MaxContainer>
+						</Flex>
+					</Container>
 				</FullWidth>
 			</Layout>
 		</>
 	);
 }
 
-const Grid = styled(GS.GridTwo)`
-	grid-template-columns: repeat(2, 1fr);
+const Container = styled(GS.MaxContainer)`
+	.p-padding {
+		max-width: 65rem;
+		margin: 0 auto;
+		padding-bottom: 5rem;
+	}
+`;
+
+const Grid = styled(GS.FlexEven)`
+	display: flex;
+	flex-direction: flex-start;
+	gap: 2rem;
 	margin: 0 auto;
 	max-width: 70rem;
+	.spacer {
+		height: 2rem;
+	}
 	.content {
 		border-radius: 1rem;
 		border: 0.1rem solid #fff;
 		height: 40rem;
+	}
+	.flex {
+		display: flex;
+		padding: 2rem;
+		box-sizing: border-box;
+		justify-content: center;
+		align-items: center;
+	}
+	.idea {
+		background: url('/ftgu-idea.webp') no-repeat top center;
+		background-position: 50% 30%;
+		background-size: 150% 150%;
+		width: 100%;
+	}
+	.dev {
+		background: url('/ftgu-development.webp') no-repeat top center;
+		background-position: 50% 40%;
+		background-size: 150% 150%;
+		width: 100%;
 	}
 `;
 
@@ -105,4 +163,7 @@ const FullWidth = styled(GS.FullWidth)`
 
 const Flex = styled(GS.FlexEven)`
 	padding: 14rem 0rem;
+	.shadow {
+		box-shadow: 1rem 1rem 0rem ${(props) => props.theme.colors.primary};
+	}
 `;

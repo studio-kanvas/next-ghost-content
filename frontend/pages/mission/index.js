@@ -29,7 +29,8 @@ export default function Home({ posts }) {
 						'Making it easy to equip entrepreneurs to win through a tailored online approach.'
 					}
 					background={`url('/ftgu-mission-clarity.jpg')`}
-					link={'Coming Soon'}
+					link={'Sign Up Today'}
+					href={'/academy'}
 					height={'100vh'}
 				/>
 				<Hero
@@ -38,7 +39,7 @@ export default function Home({ posts }) {
 						'Work with global brands and businesses to change the way entrepreneurs start and grow their brands.'
 					}
 					background={`url('/ftgu-mission-landscape.jpg')`}
-					link={'Coming Soon'}
+					link={'Work With Us'}
 					height={'100vh'}
 				/>
 			</Layout>

@@ -17,9 +17,16 @@ const GlobalStyle = createGlobalStyle`
     }
     h1 {
         font-size: 8rem;
+        transition: font-size .25s ease-in-out;
+        @media screen and (max-width: ${(props) => props.theme.maxWidth}){
+            font-size: 5.5rem;
+        };
     }
     h2 {
         font-size: 6rem;
+        @media screen and (max-width: ${(props) => props.theme.maxWidth}){
+            font-size: 4rem;
+        };
     }
     h3 {
         font-size: 4rem;
@@ -33,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
     }
     p, div, li, a, span, input, textarea, form {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-family: ${(props) => props.theme.fonts.main}
     }
     p {

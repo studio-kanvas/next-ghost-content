@@ -5,31 +5,36 @@ import { motion } from 'framer-motion';
 export const Grid = styled(GS.GridThree)`
 	grid-template-columns: repeat(3, 1fr);
 	padding: 5rem 0rem;
-`;
-
-export const GridItemContainer = styled.div`
-	overflow: hidden;
+	@media screen and (max-width: ${(props) => props.theme.midWidth}) {
+		display: block;
+	}
 `;
 
 export const GridItem = styled.div`
 	color: #fff;
-	width: 38rem;
+	max-width: 39rem;
 	height: 32.5rem;
 	background: ${(props) => props.background} no-repeat center center;
 	background-size: cover;
 	padding: 1.5rem;
 	box-sizing: border-box;
-	position: relative;
+	display: flex;
+	align-items: flex-end;
 	box-shadow: inset 0 0 0 200rem rgba(0, 0, 0, 0.5);
 	transition: all 0.25s ease-in-out;
 	&:hover {
 		box-shadow: inset 0 0 0 200rem rgba(0, 0, 0, 0);
 		cursor: pointer;
 	}
-	& > div {
-		position: absolute;
-		width: 90%;
-		bottom: 2.5rem;
+	@media screen and (max-width: ${(props) => props.theme.midWidth}) {
+		max-width: 100%;
+		margin: 2.5rem 0rem;
+		&:nth-child(1) {
+			margin-top: 0;
+		}
+	}
+	.content {
+		margin-bottom: 0.5rem;
 		p {
 			margin: 0;
 			padding: 0;

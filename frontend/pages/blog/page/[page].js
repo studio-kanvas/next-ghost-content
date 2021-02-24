@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-import Layout from '../../components/layout/layout';
-import * as GS from '../../styles/global';
-import Hero from '../../components/hero';
-import Title from '../../components/title';
-import Bloggy from '../../components/bloggy';
-import { getPosts, getAllPosts } from '../../lib/ghost';
+import Layout from '../../../components/layout/layout';
+import * as GS from '../../../styles/global';
+import Hero from '../../../components/hero';
+import Title from '../../../components/title';
+import Bloggy from '../../../components/bloggy';
+import { getPosts, getAllPosts } from '../../../lib/ghost';
 import Link from 'next/link';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 import { useRouter } from 'next/router';
 
 export default function Blog({ posts, pagination }) {
-	console.log(pagination);
 	const router = useRouter();
+	console.log(pagination);
 	return (
 		<Layout>
 			<Hero message="Blog" background={`url('/ftgu-academy-header.jpg')`} tags={posts.tags} />
@@ -52,17 +52,8 @@ export default function Blog({ posts, pagination }) {
 	);
 }
 
-// export async function getStaticProps() {
-// 	const posts = await getPosts();
-// 	return {
-// 		props: {
-// 			posts,
-// 		},
-// 	};
-// }
-
 export const getServerSideProps = async (context) => {
-	const posts = await getAllPosts(1);
+	const posts = await getAllPosts(context.params.page);
 	return {
 		props: {
 			posts: posts.posts,
