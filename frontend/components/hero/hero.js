@@ -14,10 +14,16 @@ const Hero = ({
 	postAuthor,
 	postTag,
 	createdAt,
+	darken,
 	backgroundPosition,
 }) => {
 	return (
-		<S.HeroBackground background={background} height={height} backgroundPosition={backgroundPosition}>
+		<S.HeroBackground
+			background={background}
+			height={height}
+			backgroundPosition={backgroundPosition}
+			className={darken}
+		>
 			<GS.MaxContainer>
 				<S.Message>
 					<Fade top cascade>

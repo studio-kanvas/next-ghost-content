@@ -79,6 +79,9 @@ export const Content = styled.div`
 		font-style: italic;
 		font-size: 1.6rem;
 	}
+	p:nth-child(1) {
+		padding-top: 0;
+	}
 `;
 
 export const Blog = styled.ul`

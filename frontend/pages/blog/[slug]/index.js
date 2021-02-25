@@ -14,10 +14,11 @@ export default function Slug({ post, posts }) {
 		<Layout>
 			<Hero
 				message={post.title}
-				background={`url('/ftgu-academy-header.jpg')`}
+				background={`url('${post.feature_image}')`}
 				postTag={post.tags}
 				postAuthor={post.authors[0].name}
 				createdAt={timeConvert(post.created_at)}
+				darken={'darken'}
 			/>
 			<GS.MaxContainer>
 				<Bloggy post={post} topPosts={posts} />

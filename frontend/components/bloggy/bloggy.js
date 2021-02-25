@@ -37,7 +37,6 @@ const Bloggy = ({ posts, post, topPosts }) => {
 					})}
 				{post && (
 					<S.Article>
-						<img src={post.feature_image} alt={`From The Ground Up - ${post.title}`} />
 						<S.Content
 							dangerouslySetInnerHTML={{
 								__html: post.html,

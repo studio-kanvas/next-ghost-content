@@ -11,6 +11,9 @@ export const HeroBackground = styled(GS.FullWidth)`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	&.darken {
+		box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.6);
+	}
 `;
 
 export const Message = styled.div`
