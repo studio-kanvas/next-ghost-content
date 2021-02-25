@@ -16,6 +16,9 @@ export const BlogContainer = styled(GS.FlexEven)`
 	}
 	@media screen and (max-width: ${RESPONSIVE}) {
 		display: block;
+		& > article:nth-child(2) {
+			margin-top: 5rem;
+		}
 	}
 `;
 
