@@ -122,7 +122,7 @@ const Stories = styled(GS.FlexEven)`
 	@media screen and (max-width: 800px) {
 		align-items: flex-start;
 	}
-	@media screen and (max-width: 450px) {
+	@media screen and (max-width: 550px) {
 		display: block;
 	}
 	.photo {
