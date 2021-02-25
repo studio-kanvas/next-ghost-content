@@ -37,7 +37,6 @@ export const Article = styled.article`
 	img {
 		width: 100%;
 		height: auto;
-		margin-bottom: 1.5rem;
 	}
 	ul,
 	ol {
