@@ -64,7 +64,19 @@ export const Article = styled.article`
 	}
 `;
 
-export const Content = styled.div``;
+export const Content = styled.div`
+	figure {
+		padding: 0;
+		margin: 0;
+	}
+	img {
+		padding-top: 3rem;
+	}
+	figcaption {
+		font-style: italic;
+		font-size: 1.6rem;
+	}
+`;
 
 export const Blog = styled.ul`
 	margin-bottom: 5rem;
