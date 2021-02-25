@@ -119,10 +119,8 @@ export async function getStaticProps(context) {
 const Stories = styled(GS.FlexEven)`
 	gap: 2.5rem;
 	padding: 1.5rem 0rem;
-	@media screen and (max-width: 800px) {
-		align-items: flex-start;
-	}
-	@media screen and (max-width: 550px) {
+	align-items: flex-start;
+	@media screen and (max-width: 768px) {
 		display: block;
 	}
 	.photo {
