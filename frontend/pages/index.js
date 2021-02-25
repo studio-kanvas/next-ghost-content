@@ -22,6 +22,7 @@ export default function Home({ posts }) {
 					<div className="scroll-child">
 						<Hero
 							message={HOMEPAGE.first.header}
+							description={HOMEPAGE.first.description}
 							background={HOMEPAGE.first.background}
 							link={HOMEPAGE.first.link}
 							href={HOMEPAGE.first.href}
@@ -32,6 +33,7 @@ export default function Home({ posts }) {
 						<Hero
 							message={HOMEPAGE.second.header}
 							background={HOMEPAGE.second.background}
+							backgroundPosition={HOMEPAGE.second.backgroundPosition}
 							link={HOMEPAGE.second.link}
 							href={HOMEPAGE.second.href}
 							height={HOMEPAGE.second.height}
@@ -44,7 +46,7 @@ export default function Home({ posts }) {
 						<Main>
 							<GS.MaxContainer>
 								<Title title="Resources" />
-								<Grid />
+								<Grid content={HOMEPAGE} />
 								<Title title="Related Stories" text="Read More" href={`/blog`} />
 								<GS.YPadding />
 								{posts.map((post) => {

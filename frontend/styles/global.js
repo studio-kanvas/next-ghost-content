@@ -39,6 +39,10 @@ export const fadeInTop = {
 			delay: 0.5,
 		},
 	},
+	exit: {
+		opacity: 0,
+		x: 100,
+	},
 };
 
 export const fadeInRight = {
@@ -50,7 +54,34 @@ export const fadeInRight = {
 		opacity: 1,
 		x: 0,
 		transition: {
-			delay: 1.5,
+			delay: 0.5,
+		},
+	},
+	exit: {
+		opacity: 0,
+		x: 100,
+	},
+};
+
+export const fadeInLeft = {
+	initial: {
+		opacity: 0,
+		x: 100,
+	},
+	animate: {
+		opacity: 1,
+		x: 0,
+		transition: {
+			type: 'spring',
+			bounce: 0.4,
+			mass: 0.1,
+		},
+	},
+	exit: {
+		opacity: 0,
+		x: 100,
+		transition: {
+			duration: 1,
 		},
 	},
 };
@@ -89,7 +120,16 @@ export const YPadding = styled.div`
 	padding: ${(props) => props.theme.padding} 0rem;
 `;
 
-//dynamic y padding
+export const XPadding = styled.div`
+	padding-left: ${(props) => props.theme.padding};
+	padding-right: ${(props) => props.theme.padding};
+`;
+
+export const XCPadding = styled.div`
+	padding-left: ${(props) => props.padding};
+	padding-right: ${(props) => props.padding};
+`;
+
 export const YCPadding = styled.div`
 	padding: ${(props) => props.padding} 0rem;
 `;
@@ -119,7 +159,6 @@ export const SmContainer = styled.div`
 export const FullWidth = styled.div`
 	width: 100%;
 	margin: 0 auto;
-	background: ${(props) => (props.background ? props.background : null)};
 `;
 
 //flex 50/50 split

@@ -20,6 +20,7 @@ export const GridItem = styled.div`
 	box-sizing: border-box;
 	display: flex;
 	align-items: flex-end;
+	text-align: left;
 	box-shadow: inset 0 0 0 200rem rgba(0, 0, 0, 0.5);
 	transition: all 0.25s ease-in-out;
 	&:hover {
@@ -29,9 +30,6 @@ export const GridItem = styled.div`
 	@media screen and (max-width: ${(props) => props.theme.midWidth}) {
 		max-width: 100%;
 		margin: 2.5rem 0rem;
-		&:nth-child(1) {
-			margin-top: 0;
-		}
 	}
 	.content {
 		margin-bottom: 0.5rem;

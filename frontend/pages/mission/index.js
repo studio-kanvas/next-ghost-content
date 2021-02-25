@@ -19,6 +19,7 @@ export default function Home({ posts }) {
 						'Develop entrepreneurship on a global scale and impact underserved communities.'
 					}
 					background={`url('/ftgu-mission-1m.jpg')`}
+					backgroundPosition={'30% 100%'}
 					link={'Learn More'}
 					href={'/mission/100m'}
 					height={'100vh'}
@@ -39,7 +40,9 @@ export default function Home({ posts }) {
 						'Work with global brands and businesses to change the way entrepreneurs start and grow their brands.'
 					}
 					background={`url('/ftgu-mission-landscape.jpg')`}
+					backgroundPosition={'48% 100%'}
 					link={'Work With Us'}
+					href={'/mission/changing-the-landscape'}
 					height={'100vh'}
 				/>
 			</Layout>

@@ -4,7 +4,7 @@ export const ACADEMY = {
 		message: 'From the Ground Up Academy',
 		background: `url('/ftgu-academy-header.jpg')`,
 		link: 'Sign Up Now',
-		href: '/',
+		href: 'https://www.fromthegroundupacademy.com/',
 	},
 
 	//training section

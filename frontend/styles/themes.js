@@ -1,7 +1,7 @@
 //acts as a theme switcher + global variables
 export default {
 	fonts: {
-		main: 'DM Sans', //fonts located in header file
+		main: 'Avenir', //fonts located in header file
 		header: 'Bebas Neue',
 		reading: '2rem',
 	},

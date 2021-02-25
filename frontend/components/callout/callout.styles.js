@@ -8,14 +8,19 @@ export const Call = styled(GS.FlexEven)`
 	color: #fff;
 	& > div {
 		text-align: center;
+		svg {
+			display: block;
+			margin: 0 auto;
+			padding-bottom: 1rem;
+			width: 3rem;
+			height: 3rem;
+		}
 	}
 	.x {
-		font-size: 5rem;
-		font-weight: 100;
-		opacity: 0.75;
-		position: relative;
-		top: 0.4rem;
-		font-family: Sans-serif;
+		opacity: 0.5;
+		span {
+			font-size: 3rem;
+		}
 	}
 	@media screen and (max-width: 700px) {
 		display: block;

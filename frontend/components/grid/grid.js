@@ -1,11 +1,10 @@
 import * as S from './grid.styles';
 import * as GS from '../../styles/global';
-import { HOMEPAGE } from '../../data/homepage';
 
-export default function Grid() {
+export default function Grid({ content }) {
 	return (
 		<S.Grid>
-			{HOMEPAGE.grid.map((item) => {
+			{content.grid.map((item) => {
 				const { title, description, background } = item;
 				return (
 					<S.GridItem background={background} key={title}>

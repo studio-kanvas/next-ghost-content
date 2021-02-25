@@ -52,6 +52,11 @@ const GlobalStyle = createGlobalStyle`
     pre {
         white-space: pre-wrap;
     }
+    input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
 `;
 
 export default GlobalStyle;

@@ -268,6 +268,7 @@ const Grid = styled(GS.GridThree)`
 		.container {
 			padding: 1.5rem 2.5rem;
 			border: 0.1rem solid #ccc;
+			text-align: center;
 			h2 {
 				font-size: 2.5rem;
 			}

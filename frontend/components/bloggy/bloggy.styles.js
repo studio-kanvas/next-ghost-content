@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import * as GS from '../../styles/global';
-import { motion } from 'framer-motion';
 
 const RESPONSIVE = '900px';
 
 export const BlogContainer = styled(GS.FlexEven)`
-	align-items: stretch;
-	justify-content: center;
 	margin: 7rem 0rem 5rem 0rem;
+	align-items: flex-start;
+	justify-content: flex-start;
 	gap: 3rem;
 	& > article:nth-child(1) {
 		flex: 2;

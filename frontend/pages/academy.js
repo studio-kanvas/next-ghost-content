@@ -6,6 +6,9 @@ import Hero from '../components/hero';
 import Callout from '../components/callout';
 import { ACADEMY } from '../data/academy';
 import Title from '../components/title';
+import Slide from 'react-reveal/Slide';
+import Fade from 'react-reveal/Fade';
+import Link from 'next/link';
 
 const TRAINING = '900px';
 const CLARITY = '700px';
@@ -27,7 +30,9 @@ export default function Academy() {
 							<div>
 								<Title title={ACADEMY.second.header} />
 								<span dangerouslySetInnerHTML={{ __html: ACADEMY.second.message }} />
-								<GS.MainButton className="button">Join Today</GS.MainButton>
+								<Link href="https://www.fromthegroundupacademy.com/" passHref>
+									<GS.MainButton className="button">Join Today</GS.MainButton>
+								</Link>
 							</div>
 							<div>
 								<Profile src="/ftgu-john-academy.webp" width="400" height="571" />
@@ -38,37 +43,60 @@ export default function Academy() {
 				<GS.FullWidth>
 					<GS.ImageBackground background={`url('/ftgu-academy-man.webp')`}>
 						<GS.MaxContainer>
-							<GS.YCPadding padding={'10rem'}>
+							<GS.YCPadding padding={'3rem'}>
 								<Clarity>
 									<div>
-										<BigText>
-											<div>10X</div>
-											<div>Clarity</div>
-										</BigText>
+										<Slide left>
+											<BigText>
+												<div>10X</div>
+												<div>Clarity</div>
+											</BigText>
+										</Slide>
 									</div>
 									<div>
-										<p
-											dangerouslySetInnerHTML={{
-												__html: ACADEMY.third.message,
-											}}
-										/>
-										<GS.SecondaryButton className="button">
-											Sign Up Now
-										</GS.SecondaryButton>
+										<Slide right>
+											<p
+												dangerouslySetInnerHTML={{
+													__html: ACADEMY.third.message,
+												}}
+											/>
+											<Link href="https://www.fromthegroundupacademy.com/" passHref>
+												<GS.SecondaryButton className="button">
+													Sign Up Now
+												</GS.SecondaryButton>
+											</Link>
+										</Slide>
 									</div>
 								</Clarity>
 							</GS.YCPadding>
 						</GS.MaxContainer>
 					</GS.ImageBackground>
 				</GS.FullWidth>
-				<GS.FullWidth>
-					<GS.YCPadding padding={'10rem'}>TBD</GS.YCPadding>
-				</GS.FullWidth>
+				<FourPoints>
+					<GS.YCPadding padding={'15rem'}>
+						<GS.MaxContainer>
+							<Fade cascade>
+								<Callouts>
+									<div>Worksheets to follow and build your brand with</div>
+									<div>Access through our mobile app- from anywhere in the world</div>
+								</Callouts>
+								<Callouts>
+									<div>
+										Premium Vendors and Suppliers to help you build your product line
+									</div>
+									<div>Access Future Updates of the course as they are made</div>
+								</Callouts>
+							</Fade>
+						</GS.MaxContainer>
+					</GS.YCPadding>
+				</FourPoints>
 				<GS.FullWidth>
 					<GS.ImageBackground background={`url('/ftgu-empower.jpg')`}>
 						<GS.MaxContainer>
 							<GS.YCPadding padding={'25rem'}>
-								<Heading>{ACADEMY.fourth.header}</Heading>
+								<Fade top>
+									<Heading>{ACADEMY.fourth.header}</Heading>
+								</Fade>
 								<Callout
 									calloutone={ACADEMY.fourth.calloutone}
 									callouttwo={ACADEMY.fourth.callouttwo}
@@ -86,14 +114,18 @@ export default function Academy() {
 									<Photo src={'/ftgu-academy-whats-included-700x1000.jpg'} />
 								</div>
 								<div>
-									<h2>What's Included</h2>
+									<Fade top>
+										<h2>What's Included</h2>
+									</Fade>
 									<List>
-										<li>{ACADEMY.fifth.item1}</li>
-										<li>{ACADEMY.fifth.item2}</li>
-										<li>{ACADEMY.fifth.item3}</li>
-										<li>{ACADEMY.fifth.item4}</li>
-										<li>{ACADEMY.fifth.item5}</li>
-										<li>{ACADEMY.fifth.item6}</li>
+										<Fade top cascade>
+											<li>{ACADEMY.fifth.item1}</li>
+											<li>{ACADEMY.fifth.item2}</li>
+											<li>{ACADEMY.fifth.item3}</li>
+											<li>{ACADEMY.fifth.item4}</li>
+											<li>{ACADEMY.fifth.item5}</li>
+											<li>{ACADEMY.fifth.item6}</li>
+										</Fade>
 									</List>
 								</div>
 							</Included>
@@ -104,10 +136,17 @@ export default function Academy() {
 					<GS.ImageBackground background={`url('/ftgu-academy-choose-plan.jpg')`}>
 						<GS.MaxContainer>
 							<GS.YCPadding padding={'10rem'}>
-								<Heading>Are you ready to start building from the ground up?</Heading>
-								<GS.Center>
-									<GS.SecondaryButton>Choose Your Plan</GS.SecondaryButton>
-								</GS.Center>
+								<Fade>
+									<Heading>Are you ready to start building from the ground up?</Heading>
+									<GS.Center>
+										<Link
+											href="https://www.fromthegroundupacademy.com/ftgu-academy-membership-1"
+											passHref
+										>
+											<GS.SecondaryButton>Choose Your Plan</GS.SecondaryButton>
+										</Link>
+									</GS.Center>
+								</Fade>
 							</GS.YCPadding>
 						</GS.MaxContainer>
 					</GS.ImageBackground>
@@ -117,6 +156,27 @@ export default function Academy() {
 	);
 }
 
+const Callouts = styled(GS.FlexEven)`
+	align-items: flex-start;
+	gap: 7.5rem;
+	div {
+		max-width: 35rem;
+		padding: 2.5rem 0rem;
+	}
+	@media screen and (max-width: 650px) {
+		display: block;
+		div {
+			margin: 0 auto;
+			padding: 3.5rem;
+		}
+	}
+`;
+
+const FourPoints = styled(GS.FullWidth)`
+	background: url('/ftgu-academy-coffee.webp') no-repeat top left;
+	background-size: 35%;
+`;
+
 const Training = styled(GS.FlexEven)`
 	position: relative;
 	div:nth-child(1) {
@@ -124,9 +184,6 @@ const Training = styled(GS.FlexEven)`
 	}
 	@media screen and (max-width: ${TRAINING}) {
 		display: block;
-		h3 {
-			margin-left: 7rem;
-		}
 	}
 `;
 
@@ -209,7 +266,6 @@ const Heading = styled.h2`
 const BigText = styled.div`
 	color: #fff;
 	& > div:nth-child(1) {
-		padding-top: 5rem;
 		font-size: 15rem;
 		font-family: ${(props) => props.theme.fonts.header};
 	}
@@ -234,10 +290,11 @@ const Profile = styled.img`
 	border-radius: 1rem;
 	transition: all 0.25s ease-in-out;
 	@media screen and (max-width: ${TRAINING}) {
-		position: absolute;
+		/* position: absolute;
 		top: -3.5rem;
 		width: 6rem;
 		z-index: -1;
-		box-shadow: 0.3rem 0.3rem 0rem ${(props) => props.theme.colors.primary};
+		box-shadow: 0.3rem 0.3rem 0rem ${(props) => props.theme.colors.primary}; */
+		display: none;
 	}
 `;

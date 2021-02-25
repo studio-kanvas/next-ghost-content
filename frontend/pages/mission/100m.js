@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Layout from '../../components/layout/layout';
 import * as GS from '../../styles/global';
 import Link from 'next/link';
+import Fade from 'react-reveal/Fade';
 
 const Main = styled.div`
 	padding: 10rem 0rem;
@@ -25,17 +26,23 @@ export default function Home({ posts }) {
 						</p>
 					</GS.MaxContainer>
 				</Header>
-				<FullWidth background={'#000'}>
+				<FullWidth className="youtube-social">
 					<Container>
 						<Flex>
-							<div>
-								<h2>YouTube Videos</h2>
-							</div>
-							<div>
-								<h2>Social Media Content</h2>
-							</div>
+							<Fade top cascade>
+								<div>
+									<h2>YouTube Videos</h2>
+								</div>
+								<div>
+									<h2>Social Media Content</h2>
+								</div>
+							</Fade>
 						</Flex>
-						<p className="p-padding">
+					</Container>
+				</FullWidth>
+				<FullWidth background={'#000'}>
+					<Container>
+						<p className="p-padding p-top">
 							We serve those who are underserved and don’t have the money or the opportunity to
 							travel and learn an industry on their own. We take what we have learned over the
 							last decade of doing it, and open the doors for you to absorb that knowledge. Best
@@ -49,50 +56,54 @@ export default function Home({ posts }) {
 							channel.
 						</p>
 						<Grid>
-							<div>
-								<div className="spacer"></div>
-								<div className="content idea" />
-								<div className="spacer"></div>
-								<div className="content flex">
-									<div>
-										<h3>Development</h3>
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, odio.
-											Odit, tenetur minus rem aliquam cum unde eveniet eligendi,
-											repudiandae quasi similique, quidem numquam impedit nostrum
-											voluptate nihil recusandae architecto?
-										</p>
+							<Fade top cascade>
+								<div>
+									<div className="spacer"></div>
+									<div className="content idea" />
+									<div className="spacer"></div>
+									<div className="content flex">
+										<div>
+											<h3>Development</h3>
+											<p>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
+												odio. Odit, tenetur minus rem aliquam cum unde eveniet
+												eligendi, repudiandae quasi similique, quidem numquam impedit
+												nostrum voluptate nihil recusandae architecto?
+											</p>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div>
-								<div className="content flex">
-									<div>
-										<h3>Idea &amp; Concept</h3>
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, odio.
-											Odit, tenetur minus rem aliquam cum unde eveniet eligendi,
-											repudiandae quasi similique, quidem numquam impedit nostrum
-											voluptate nihil recusandae architecto?
-										</p>
+								<div>
+									<div className="content flex">
+										<div>
+											<h3>Idea &amp; Concept</h3>
+											<p>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
+												odio. Odit, tenetur minus rem aliquam cum unde eveniet
+												eligendi, repudiandae quasi similique, quidem numquam impedit
+												nostrum voluptate nihil recusandae architecto?
+											</p>
+										</div>
 									</div>
+									<div className="spacer"></div>
+									<div className="content dev" />
+									<div className="spacer"></div>
 								</div>
-								<div className="spacer"></div>
-								<div className="content dev" />
-								<div className="spacer"></div>
-							</div>
+							</Fade>
 						</Grid>
 						<Flex>
-							<div>
-								<img src={'/ftgu-tourist.webp'} alt="" className="shadow" />
-							</div>
-							<div>
-								<h3>Share Your Story and Cause</h3>
-								<p>
-									We love to hear from you. Tag us in a future post where you declare your
-									mission to the world. @johnxsantos
-								</p>
-							</div>
+							<Fade cascade>
+								<div>
+									<img src={'/ftgu-tourist.webp'} alt="" className="shadow" />
+								</div>
+								<div>
+									<h3>Share Your Story and Cause</h3>
+									<p>
+										We love to hear from you. Tag us in a future post where you declare
+										your mission to the world. @johnxsantos
+									</p>
+								</div>
+							</Fade>
 						</Flex>
 					</Container>
 				</FullWidth>
@@ -102,6 +113,9 @@ export default function Home({ posts }) {
 }
 
 const Container = styled(GS.MaxContainer)`
+	.p-top {
+		padding-top: 5rem;
+	}
 	.p-padding {
 		max-width: 65rem;
 		margin: 0 auto;
@@ -142,6 +156,16 @@ const Grid = styled(GS.FlexEven)`
 		background-size: 150% 150%;
 		width: 100%;
 	}
+	@media screen and (max-width: 800px) {
+		display: block;
+		.idea,
+		.dev {
+			display: none;
+		}
+		.content {
+			margin-bottom: 2.5rem;
+		}
+	}
 `;
 
 const Header = styled.div`
@@ -158,12 +182,31 @@ const Header = styled.div`
 
 const FullWidth = styled(GS.FullWidth)`
 	color: #fff;
+	background: #000;
 	text-align: center;
+	&.youtube-social {
+		background: url('/ftgu-youtube-social.webp') no-repeat center;
+		background-size: cover;
+	}
 `;
 
 const Flex = styled(GS.FlexEven)`
 	padding: 14rem 0rem;
 	.shadow {
 		box-shadow: 1rem 1rem 0rem ${(props) => props.theme.colors.primary};
+	}
+	@media screen and (max-width: 850px) {
+		display: block;
+		h3 {
+			margin: 2.5rem 0rem;
+		}
+		p {
+			max-width: 50rem;
+			margin: 0 auto;
+		}
+		img {
+			margin: 0 auto;
+			width: 60%;
+		}
 	}
 `;

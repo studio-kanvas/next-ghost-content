@@ -3,8 +3,9 @@ import * as GS from '../../styles/global';
 import { motion } from 'framer-motion';
 
 export const HeroBackground = styled(GS.FullWidth)`
-	background: ${(props) => props.background} no-repeat center center;
+	background: ${(props) => props.background} no-repeat center;
 	background-size: cover;
+	background-position: ${(props) => props.backgroundPosition};
 	width: 100vw;
 	height: ${(props) => (props.height ? props.height : '50vh;')};
 	display: flex;
