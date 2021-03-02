@@ -11,7 +11,7 @@ const Email = () => {
 				<S.Form>
 					<GS.MaxContainer>
 						<GS.YPadding>
-							<p>
+							<p style={{ maxWidth: '55rem', margin: '3rem auto' }}>
 								Make an impact with weekly insight, PDF’s and exclusive content Join 50,000+
 								entrepreneurs who are taking action in our community by joining our
 								newsletter.
