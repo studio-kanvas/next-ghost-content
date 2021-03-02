@@ -17,6 +17,16 @@ export async function getPosts() {
 		});
 }
 
+export async function getTags() {
+	return await api.posts
+		.browse({
+			include: 'tags',
+		})
+		.catch((err) => {
+			console.error(err);
+		});
+}
+
 export async function getAllPosts(page) {
 	try {
 		const response = await fetch(
@@ -42,17 +52,17 @@ export async function getSinglePost(postSlug) {
 		.catch((err) => console.error(err));
 }
 
-// export async function getTags() {
-// 	try {
-// 		const response = await fetch(
-// 			`${process.env.GHOST_URL}/ghost/api/v3/content/tags/?key=${process.env.GHOST_KEY}`
-// 		);
-// 		const data = await response.json();
-// 		return data;
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// }
+export async function getAllTags() {
+	try {
+		const response = await fetch(
+			`${process.env.GHOST_URL}/ghost/api/v3/content/tags/?key=${process.env.GHOST_KEY}`
+		);
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		console.log(error);
+	}
+}
 
 // export async function getPages() {
 // 	return await api.pages

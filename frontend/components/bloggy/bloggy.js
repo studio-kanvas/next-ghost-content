@@ -30,6 +30,10 @@ const Bloggy = ({ posts, post, topPosts }) => {
 											<h2>{post.title}</h2>
 										</li>
 										<li>{post.excerpt}</li>
+										<li className="blog-meta">
+											<span>{post.authors[0].name}</span> | Published{' '}
+											{timeConvert(post.published_at)}
+										</li>
 									</S.Blog>
 								</a>
 							</Link>
@@ -37,6 +41,7 @@ const Bloggy = ({ posts, post, topPosts }) => {
 					})}
 				{post && (
 					<S.Article>
+						<h2>{post.title}</h2>
 						<S.Content
 							dangerouslySetInnerHTML={{
 								__html: post.html,
@@ -65,13 +70,13 @@ const Bloggy = ({ posts, post, topPosts }) => {
 										</Link>
 									</div>
 									<div>
-										<div>{post.title}</div>
+										<div className="title">{post.title}</div>
 										<ul className="tag">
 											{post.tags.map((tag) => {
 												return (
 													<li key={tag.id}>
 														<Link
-															href={`/blog/${encodeURIComponent(tag.slug)}`}
+															href={`/blog/tag/${encodeURIComponent(tag.slug)}`}
 															key={post.excerpt}
 														>
 															<a>{tag.name}</a>
@@ -80,7 +85,9 @@ const Bloggy = ({ posts, post, topPosts }) => {
 												);
 											})}
 										</ul>
-										<div className="updated">Updated {timeConvert(post.updated_at)}</div>
+										<div className="created">
+											{post.authors[0].name} | {timeConvert(post.published_at)}
+										</div>
 									</div>
 								</S.TopBlogs>
 							);
@@ -100,13 +107,13 @@ const Bloggy = ({ posts, post, topPosts }) => {
 										</Link>
 									</div>
 									<div>
-										<div>{post.title}</div>
+										<div className="title">{post.title}</div>
 										<ul className="tag">
 											{post.tags.map((tag) => {
 												return (
 													<li key={tag.id}>
 														<Link
-															href={`/blog/${encodeURIComponent(tag.slug)}`}
+															href={`/blog/tag/${encodeURIComponent(tag.slug)}`}
 															key={post.excerpt}
 														>
 															<a>{tag.name}</a>
@@ -115,7 +122,9 @@ const Bloggy = ({ posts, post, topPosts }) => {
 												);
 											})}
 										</ul>
-										<div className="updated">Updated {timeConvert(post.updated_at)}</div>
+										<div className="created">
+											{post.authors[0].name} | {timeConvert(post.published_at)}
+										</div>
 									</div>
 								</S.TopBlogs>
 							);

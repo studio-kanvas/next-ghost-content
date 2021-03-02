@@ -31,6 +31,14 @@ export const BlogArticles = styled.article`
 		color: #555;
 		text-decoration: none;
 	}
+	.blog-meta {
+		padding-top: 1.5rem;
+		font-size: 1.4rem;
+		span {
+			font-weight: bold;
+			font-size: 1.4rem;
+		}
+	}
 `;
 
 export const Article = styled.article`
@@ -47,13 +55,13 @@ export const Article = styled.article`
 	}
 	p {
 		margin: 0;
-		padding: 2.5rem 0rem 0rem 0rem;
+		padding: 0rem 0rem 2.5rem 0rem;
 	}
 	h2,
 	h3,
 	h4,
 	h5 {
-		margin-top: 3rem;
+		margin-bottom: 3rem;
 	}
 	h3 {
 		font-size: 3rem;
@@ -72,14 +80,37 @@ export const Content = styled.div`
 		margin: 0;
 	}
 	img {
-		padding-top: 3rem;
+		padding-bottom: 3rem;
 	}
 	figcaption {
 		font-style: italic;
-		font-size: 1.6rem;
+		font-size: 1.5rem;
+		padding-bottom: 4rem;
 	}
 	p:nth-child(1) {
 		padding-top: 0;
+	}
+	iframe {
+		width: 100%;
+		height: 40vh;
+	}
+	blockquote {
+		border-left: 0.5rem solid #000;
+		margin-left: 0;
+		padding-left: 1.5rem;
+		font-style: italic;
+	}
+	ul {
+		margin-left: 1.5rem;
+		list-style: circle;
+	}
+	a {
+		text-decoration: underline;
+		color: #000;
+		font-weight: bold;
+	}
+	p {
+		color: #333;
 	}
 `;
 
@@ -140,15 +171,18 @@ export const TopBlogs = styled(GS.FlexEven)`
 		bottom: 0.5rem;
 		margin-left: 1rem;
 		flex: 2.5;
-		.tag {
-			padding-top: 0.75rem;
+		.title {
 			font-size: 1.4rem;
+		}
+		.tag {
+			padding-top: 0.25rem;
 			color: #666;
 			li {
 				display: inline;
 				padding-right: 0.5rem;
 				a,
 				a:visited {
+					font-size: 1.4rem;
 					text-decoration: none;
 					font-family: ${(props) => props.theme.fonts.header};
 					color: #000;
@@ -161,7 +195,7 @@ export const TopBlogs = styled(GS.FlexEven)`
 				}
 			}
 		}
-		.updated {
+		.created {
 			padding-top: 0.5rem;
 			font-size: 1.3rem;
 			color: #777;

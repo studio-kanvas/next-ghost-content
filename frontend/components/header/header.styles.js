@@ -77,6 +77,7 @@ export const Navigation = styled.nav`
 				a:visited {
 					color: #eee;
 					text-decoration: none;
+					font-family: ${(props) => props.theme.fonts.header};
 					transition: color 0.25s ease-in-out;
 				}
 				a:hover {
