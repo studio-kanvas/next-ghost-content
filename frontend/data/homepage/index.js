@@ -25,31 +25,37 @@ export const HOMEPAGE = {
 			title: 'From The Ground Up Academy',
 			description: 'Access our online education to help expand your brands offering',
 			background: `url('/ftgu-academy-762x648-min.jpg')`,
+			link: '/academy',
 		},
 		{
 			title: 'Streetwear Apparel',
 			description: 'Shop wholesale products with no resale certificate required',
 			background: `url('/ftgu-streetwear-apparel-762x648-min.jpg')`,
+			link: 'http://bit.ly/2TnwtBB',
 		},
 		{
 			title: 'From The Ground Up YouTube',
 			description: 'Stay connected and watch the latest content on our channel',
 			background: `url('/ftgu-youtube-762x648-2-min.jpg')`,
+			link: 'https://www.youtube.com/johnxsantos',
 		},
 		{
 			title: 'Instagram',
 			description: 'Follow our page for daily insight, tips, and tricks',
 			background: `url('/ftgu-instagram-762x648-min.jpg')`,
+			link: 'https://www.instagram.com/johnxsantos/',
 		},
 		{
 			title: 'Assets',
 			description: 'Access our list of vendors, suppliers, and resources',
 			background: `url('/ftgu-assets-762x648-02-min.jpg')`,
+			link: '/assets',
 		},
 		{
 			title: 'FTGU Blog',
 			description: 'Catch up on recent articles to help you on your journey',
 			background: `url('/ftgu-blog-762x648-min.jpg')`,
+			link: '/blog',
 		},
 	],
 };

@@ -31,6 +31,10 @@ export const GridItem = styled.div`
 		max-width: 100%;
 		margin: 2.5rem 0rem;
 	}
+	a {
+		color: #fff;
+		text-decoration: none;
+	}
 	.content {
 		margin-bottom: 0.5rem;
 		p {
