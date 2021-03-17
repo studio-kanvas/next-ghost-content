@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 import Layout from '../../components/layout/layout';
 import * as GS from '../../styles/global';
-import Link from 'next/link';
 import Grid from '../../components/grid';
 import Fade from 'react-reveal/Fade';
+import Link from 'next/link';
 import { LANDSCAPE } from '../../data/landscape';
-
-const Main = styled.div`
-	padding: 10rem 0rem;
-`;
 
 export default function Landscape({ content }) {
 	return (
@@ -98,6 +94,10 @@ export default function Landscape({ content }) {
 		</>
 	);
 }
+
+const Main = styled.div`
+	padding: 10rem 0rem;
+`;
 
 const Container = styled(GS.MaxContainer)`
 	.p-top {
