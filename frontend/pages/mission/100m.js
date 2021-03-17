@@ -3,6 +3,8 @@ import Layout from '../../components/layout/layout';
 import * as GS from '../../styles/global';
 import Link from 'next/link';
 import Fade from 'react-reveal/Fade';
+import { GiNetworkBars } from 'react-icons/gi';
+import { BiCheck } from 'react-icons/bi';
 
 const Main = styled.div`
 	padding: 10rem 0rem;
@@ -46,15 +48,16 @@ export default function Home({ posts }) {
 							We serve those who are underserved and don’t have the money or the opportunity to
 							travel and learn an industry on their own. We take what we have learned over the
 							last decade of doing it, and open the doors for you to absorb that knowledge. Best
-							of all, it is free of charge. We only ask that you
+							of all, it is free of charge. We only ask that you:
 						</p>
 						<h2>Make An Impact</h2>
-						<p className="p-padding">
+						<p>
 							Your family, team and community are counting on you to succeed and we ask that you
 							pay it forward by building a brand that impacts your world. Share your journey and
 							story with us, for a chance to be highlighted in an upcoming series on the
 							channel.
 						</p>
+						<GS.YPadding />
 						<Grid>
 							<Fade top cascade>
 								<div>
@@ -63,12 +66,11 @@ export default function Home({ posts }) {
 									<div className="spacer"></div>
 									<div className="content flex">
 										<div>
-											<h3>Development</h3>
+											<BiCheck />
+											<h3>BE THE CHANGE</h3>
 											<p>
-												Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
-												odio. Odit, tenetur minus rem aliquam cum unde eveniet
-												eligendi, repudiandae quasi similique, quidem numquam impedit
-												nostrum voluptate nihil recusandae architecto?
+												We ask that you pay it forward by building a brand that
+												positively impacts your community.
 											</p>
 										</div>
 									</div>
@@ -76,12 +78,11 @@ export default function Home({ posts }) {
 								<div>
 									<div className="content flex">
 										<div>
-											<h3>Idea &amp; Concept</h3>
+											<GiNetworkBars />
+											<h3>TAKE ACTION</h3>
 											<p>
-												Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
-												odio. Odit, tenetur minus rem aliquam cum unde eveniet
-												eligendi, repudiandae quasi similique, quidem numquam impedit
-												nostrum voluptate nihil recusandae architecto?
+												Your family, team and community are counting on you to succeed
+												and the journey begins by getting started.
 											</p>
 										</div>
 									</div>
@@ -99,8 +100,9 @@ export default function Home({ posts }) {
 								<div>
 									<h3>Share Your Story and Cause</h3>
 									<p>
-										We love to hear from you. Tag us in a future post where you declare
-										your mission to the world. @johnxsantos
+										Share your journey and story with us for a chance to be highlighted in
+										future content. Take it a step further and tag us in a post where you
+										declare your brand's mission to the world! @johnxsantos
 									</p>
 								</div>
 							</Fade>
@@ -114,13 +116,21 @@ export default function Home({ posts }) {
 
 const Container = styled(GS.MaxContainer)`
 	.p-top {
-		padding-top: 5rem;
+		position: relative;
+		top: -5rem;
 	}
-	.p-padding {
-		max-width: 65rem;
+	h2 {
+		padding-bottom: 4.5rem;
+	}
+	p {
+		max-width: 55rem;
 		margin: 0 auto;
-		padding-bottom: 5rem;
 	}
+`;
+
+const Paragraph = styled.p`
+	max-width: 50rem;
+	margin: 0 auto;
 `;
 
 const Grid = styled(GS.FlexEven)`
@@ -136,6 +146,10 @@ const Grid = styled(GS.FlexEven)`
 		border-radius: 1rem;
 		border: 0.1rem solid #fff;
 		height: 40rem;
+		svg {
+			width: 6rem;
+			height: 6rem;
+		}
 	}
 	.flex {
 		display: flex;
@@ -172,10 +186,10 @@ const Header = styled.div`
 	text-align: center;
 	padding: 20rem 0rem;
 	color: #fff;
-	background: url('/ftgu-mission-1m.jpg') no-repeat center;
+	background: url('/ftgu-100m.webp') no-repeat center;
 	background-size: cover;
 	p {
-		max-width: 75rem;
+		max-width: 60rem;
 		margin: 0 auto;
 	}
 `;

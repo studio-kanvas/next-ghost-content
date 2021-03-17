@@ -22,10 +22,10 @@ export default function Landscape({ content }) {
 								<p>
 									We serve a community of 300,000+ entrepreneurs who are passionate,
 									dedicated and willing to expand their earning potential through starting
-									businesses. Located in major cities all over the world. LA, NY, Miami and
-									Houston Texas, in addition to globally in growing markets like India and
-									South Africa. Our content is created for entrepreneurs and used by
-									entrepreneurs globally.
+									brands and businesses. Located in major cities such as LA, NY, Miami and
+									Houston, in addition to growing globally to markets in India and South
+									Africa. Our content is created for entrepreneurs and used by entrepreneurs
+									from all walks of life.
 								</p>
 							</div>
 						</Fade>
@@ -46,8 +46,8 @@ export default function Landscape({ content }) {
 									forgotten, and it has become a force of change over the last few years.
 								</p>
 								<p className="p-padding">
-									If you're a company that is willing to share your business operations,
-									products or services and can give before asking. Here’s how we can work:
+									If you’re a company that is willing to share your business operations,
+									products or services, here’s how we can work:
 								</p>
 							</div>
 						</Fade>
@@ -61,7 +61,7 @@ export default function Landscape({ content }) {
 								</div>
 								<div>
 									<Fade top>
-										<h2>What's Included</h2>
+										<h3>COMPANIES WE LIKE WORKING WITH</h3>
 									</Fade>
 									<List>
 										<Fade top cascade>
@@ -72,6 +72,8 @@ export default function Landscape({ content }) {
 											<li>Logistics</li>
 											<li>Manufacturers</li>
 											<li>Equipment</li>
+											<li>Brand Marketing</li>
+											<li>Music/ Entertainment Agencies</li>
 										</Fade>
 									</List>
 								</div>
@@ -85,7 +87,7 @@ export default function Landscape({ content }) {
 								available to fit your needs.
 							</p>
 							<Fade>
-								<Link href="mailto:support@fromthegroundup.io" passHref>
+								<Link href="mailto:john@thesantosstudios.com" passHref>
 									<GS.MainButton>Get Started</GS.MainButton>
 								</Link>
 							</Fade>
@@ -127,7 +129,7 @@ const FullWidth = styled(GS.FullWidth)`
 `;
 
 const WorkTogether = styled(GS.FlexEven)`
-	align-items: flex-start;
+	align-items: center;
 	@media screen and (max-width: 700px) {
 		div {
 			img {

@@ -28,9 +28,11 @@ export const FooterInformation = styled(GS.FlexEven)`
 		ul {
 			padding-bottom: 2.5rem;
 			li {
+				display: block;
 				padding: 0.5rem 0rem;
 				a {
 					text-decoration: none;
+					font-size: 1.6rem;
 					color: #ccc;
 					&.active {
 						color: #fff;
@@ -48,6 +50,19 @@ export const FooterInformation = styled(GS.FlexEven)`
 	}
 	div {
 		color: #fff;
+	}
+	ul {
+		li {
+			display: inline;
+			padding-right: 2rem;
+			a {
+				color: #fff;
+				transition: all 0.25s ease-in-out;
+				&:hover {
+					color: ${(props) => props.theme.colors.primary};
+				}
+			}
+		}
 	}
 `;
 

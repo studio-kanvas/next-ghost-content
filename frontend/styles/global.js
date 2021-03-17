@@ -208,6 +208,7 @@ export const GridThree = styled.div`
 	display: grid;
 	grid-gap: 2rem;
 	transition: all 0.25s ease-in-out;
+	grid-template-columns: repeat(3, 1fr);
 	@media screen and (max-width: ${(props) => props.theme.midWidth}) {
 		grid-template-columns: repeat(2, 1fr);
 	}

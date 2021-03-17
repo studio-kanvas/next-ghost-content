@@ -3,10 +3,10 @@ export const HOMEPAGE = {
 	first: {
 		header: 'Our Mission',
 		description:
-			'We bring clarity to entrepreneurs and equip them to build brands that impact the world.',
+			'We bring clarity to business and equip entrepreneurs to build brands that impact the world.',
 		background: `url('/ftgu-our-goal.webp')`,
 		link: 'Learn More',
-		href: '/academy',
+		href: '/mission',
 		height: '100vh',
 	},
 

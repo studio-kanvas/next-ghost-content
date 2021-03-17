@@ -6,6 +6,8 @@ import * as S from './footer.styles';
 import { LINKS } from '../../data/links';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { FaFacebookSquare, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { SiTiktok } from 'react-icons/si';
 
 const Footer = () => {
 	const router = useRouter();
@@ -104,6 +106,36 @@ const Footer = () => {
 								&copy; <span className="copy-year"></span> From The Ground Up. All Rights
 								Reserved.
 							</p>
+							<ul>
+								<li>
+									<Link href="https://www.youtube.com/johnxsantos">
+										<a target="_blank">
+											<FaYoutube />
+										</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="https://www.facebook.com/JohnXSantos1">
+										<a target="_blank">
+											<FaFacebookSquare />
+										</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="https://www.instagram.com/johnxsantos/">
+										<a target="_blank">
+											<FaInstagram />
+										</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="https://www.tiktok.com/@johnxsantos">
+										<a target="_blank">
+											<SiTiktok />
+										</a>
+									</Link>
+								</li>
+							</ul>
 						</div>
 					</S.FooterInformation>
 				</GS.MaxContainer>

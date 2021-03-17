@@ -9,6 +9,9 @@ import Title from '../components/title';
 import Slide from 'react-reveal/Slide';
 import Fade from 'react-reveal/Fade';
 import Link from 'next/link';
+import { BsNewspaper } from 'react-icons/bs';
+import { GiRolledCloth, GiSmartphone } from 'react-icons/gi';
+import { MdPeople } from 'react-icons/md';
 
 const TRAINING = '900px';
 const CLARITY = '700px';
@@ -77,14 +80,24 @@ export default function Academy() {
 						<GS.MaxContainer>
 							<Fade cascade>
 								<Callouts>
-									<div>Worksheets to follow and build your brand with</div>
-									<div>Access through our mobile app- from anywhere in the world</div>
+									<div>
+										<BsNewspaper />
+										Worksheets to follow and build your brand
+									</div>
+									<div>
+										<GiSmartphone />
+										Access through our mobile app- from anywhere in the world
+									</div>
 								</Callouts>
 								<Callouts>
 									<div>
-										Premium Vendors and Suppliers to help you build your product line
+										<GiRolledCloth />
+										Premium vendors and suppliers to help you build your product line
 									</div>
-									<div>Access Future Updates of the course as they are made</div>
+									<div>
+										<MdPeople />
+										Your membership unlocks future updates to our training course
+									</div>
 								</Callouts>
 							</Fade>
 						</GS.MaxContainer>
@@ -162,6 +175,12 @@ const Callouts = styled(GS.FlexEven)`
 	div {
 		max-width: 35rem;
 		padding: 2.5rem 0rem;
+		svg {
+			display: block;
+			width: 4rem;
+			height: 4rem;
+			padding-bottom: 1rem;
+		}
 	}
 	@media screen and (max-width: 650px) {
 		display: block;

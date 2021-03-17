@@ -37,7 +37,7 @@ export default function Home({ posts }) {
 				<Hero
 					message={'Changing the Landscape'}
 					description={
-						'Work with global brands and businesses to change the way entrepreneurs start and grow their brands.'
+						'Our mission is to change the lives of entrepreneurs in underserved communities and we need global brands and businesses who are willing to make an impact.'
 					}
 					background={`url('/ftgu-mission-landscape.jpg')`}
 					backgroundPosition={'48% 100%'}
