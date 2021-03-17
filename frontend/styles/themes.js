@@ -9,6 +9,7 @@ export default {
 	maxWidth: '1200px',
 	midWidth: '768px',
 	smWidth: '640px',
+	iphoneplus: '414px',
 	colors: {
 		primary: '#F84F49',
 		secondary: 'red',

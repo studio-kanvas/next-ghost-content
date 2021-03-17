@@ -8,13 +8,12 @@ import Link from 'next/link';
 import Grid from '../components/grid';
 import { getPosts } from '../lib/ghost';
 import { HOMEPAGE } from '../data/homepage';
-
-const Main = styled.div`
-	padding: 10rem 0rem;
-`;
+import MainContext from '../hooks/context';
+import { useContext } from 'react';
 
 export default function Home({ posts }) {
 	console.log(posts);
+	const context = useContext(MainContext);
 	return (
 		<>
 			<Layout>
@@ -66,16 +65,11 @@ export default function Home({ posts }) {
 												</Link>
 											</div>
 											<div className="content">
-												<div>
-													{post.tags.map((tag) => {
-														return (
-															<Link href={`/blog/${tag.slug}`} key={tag.id}>
-																<a>{tag.name}</a>
-															</Link>
-														);
-													})}{' '}
-													| By <strong>{post.authors[0].name}</strong>
+												<div className="meta">
+													By <strong>{post.authors[0].name}</strong> x{' '}
+													{context.timeConvert(post.published_at)}
 												</div>
+
 												<div>
 													<Link
 														href={`/blog/${encodeURIComponent(post.slug)}`}
@@ -83,6 +77,18 @@ export default function Home({ posts }) {
 													>
 														<a>
 															<h3>{post.title}</h3>
+															<div>
+																{post.tags.map((tag) => {
+																	return (
+																		<Link
+																			href={`/blog/${tag.slug}`}
+																			key={tag.id}
+																		>
+																			<a className="tag">{tag.name}</a>
+																		</Link>
+																	);
+																})}{' '}
+															</div>
 															<p>{post.excerpt}</p>
 														</a>
 													</Link>
@@ -116,10 +122,21 @@ export async function getStaticProps(context) {
 	};
 }
 
+const Main = styled.div`
+	padding: 10rem 0rem;
+`;
+
 const Stories = styled(GS.FlexEven)`
 	gap: 2.5rem;
 	padding: 1.5rem 0rem;
 	align-items: flex-start;
+	img {
+		opacity: 0.8;
+		transition: all 0.25s ease-in-out;
+		&:hover {
+			opacity: 1;
+		}
+	}
 	@media screen and (max-width: 768px) {
 		display: block;
 	}
@@ -131,7 +148,7 @@ const Stories = styled(GS.FlexEven)`
 		}
 	}
 	.content {
-		flex: 2;
+		flex: 1.15;
 		h3 {
 			font-size: 2.5rem;
 			color: #222;
@@ -143,6 +160,22 @@ const Stories = styled(GS.FlexEven)`
 		p {
 			margin-top: 0;
 			color: #333;
+		}
+		.meta {
+			font-size: 1.6rem;
+		}
+		.tag {
+			padding-right: 0.5rem;
+			font-family: ${(props) => props.theme.fonts.header};
+			font-size: 1.9rem;
+			position: relative;
+			color: #555;
+			&:after {
+				content: ' x';
+			}
+			&:nth-last-child(1)::after {
+				content: '';
+			}
 		}
 	}
 `;

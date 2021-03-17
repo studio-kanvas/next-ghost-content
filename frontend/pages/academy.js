@@ -131,14 +131,12 @@ export default function Academy() {
 										<h2>What's Included</h2>
 									</Fade>
 									<List>
-										<Fade top cascade>
-											<li>{ACADEMY.fifth.item1}</li>
-											<li>{ACADEMY.fifth.item2}</li>
-											<li>{ACADEMY.fifth.item3}</li>
-											<li>{ACADEMY.fifth.item4}</li>
-											<li>{ACADEMY.fifth.item5}</li>
-											<li>{ACADEMY.fifth.item6}</li>
-										</Fade>
+										<li>{ACADEMY.fifth.item1}</li>
+										<li>{ACADEMY.fifth.item2}</li>
+										<li>{ACADEMY.fifth.item3}</li>
+										<li>{ACADEMY.fifth.item4}</li>
+										<li>{ACADEMY.fifth.item5}</li>
+										<li>{ACADEMY.fifth.item6}</li>
 									</List>
 								</div>
 							</Included>

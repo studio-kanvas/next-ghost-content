@@ -29,14 +29,14 @@ export const Backdrop = styled(motion.div)`
 `;
 
 export const NavContainer = styled(GS.FullWidth)`
-	&.invert::before {
-		box-shadow: 10rem 0rem 10rem rgba(0, 0, 0, 1);
+	&.invert:before {
+		box-shadow: -5.5rem 5rem 5rem rgba(0, 0, 0, 1);
 		content: '';
 		position: absolute;
 		z-index: -1;
-		width: 100%;
+		width: 130%;
 		height: 100%;
-		top: -7rem;
+		top: -8.5rem;
 	}
 `;
 
@@ -91,7 +91,7 @@ export const Navigation = styled.nav`
 					height: 2.5rem;
 					width: 2.5rem;
 					opacity: 0.8;
-					margin-top: 0.2rem;
+					margin-top: 0rem;
 					transition: all 0.25s ease-in-out;
 					&:hover {
 						cursor: pointer;

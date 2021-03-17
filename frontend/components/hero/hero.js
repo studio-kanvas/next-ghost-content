@@ -2,6 +2,8 @@ import * as S from './hero.styles';
 import * as GS from '../../styles/global';
 import Link from 'next/link';
 import Fade from 'react-reveal/Fade';
+import MainContext from '../../hooks/context';
+import { useContext } from 'react';
 
 const Hero = ({
 	message,
@@ -17,6 +19,7 @@ const Hero = ({
 	darken,
 	backgroundPosition,
 }) => {
+	const context = useContext(MainContext);
 	return (
 		<S.HeroBackground
 			background={background}
@@ -59,12 +62,18 @@ const Hero = ({
 					{/* Internal Article Page */}
 					{postAuthor && (
 						<S.SingleArticle>
-							<div>By {postAuthor}</div>
-							<div>{createdAt}</div>
+							<div className="author">By {postAuthor}</div>
+							<div>{context.timeConvert(createdAt)}</div>
 							<div>
 								{postTag.map((tag) => {
 									return (
-										<Link href={tag.slug} key={tag.id}>
+										// <Link href={tag.slug} key={tag.id}>
+										// 	<a>{tag.name}</a>
+										// </Link>
+										<Link
+											href={`/blog/tag/${encodeURIComponent(tag.slug)}`}
+											key={tag.slug}
+										>
 											<a>{tag.name}</a>
 										</Link>
 									);

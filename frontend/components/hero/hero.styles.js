@@ -7,7 +7,7 @@ export const HeroBackground = styled(GS.FullWidth)`
 	background-size: cover;
 	background-position: ${(props) => props.backgroundPosition};
 	width: 100vw;
-	height: ${(props) => (props.height ? props.height : '50vh;')};
+	height: ${(props) => (props.height ? props.height : 'auto')};
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -20,8 +20,14 @@ export const Message = styled.div`
 	max-width: 70rem;
 	text-align: center;
 	margin: 0 auto;
+	padding: 15rem 0rem;
 	h1 {
 		color: #ffffff;
+	}
+	@media screen and (max-width: ${(props) => props.theme.iphoneplus}) {
+		h1 {
+			font-size: 3rem;
+		}
 	}
 `;
 
@@ -45,8 +51,12 @@ export const Tags = styled.ul`
 `;
 
 export const SingleArticle = styled(GS.FlexEven)`
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 0 auto;
 	div {
-		padding-right: 1rem;
+		flex: 1;
 	}
 	div,
 	a {
@@ -62,6 +72,15 @@ export const SingleArticle = styled(GS.FlexEven)`
 		display: block;
 		div {
 			padding: 1rem 0rem;
+		}
+	}
+	@media screen and (max-width: ${(props) => props.theme.iphoneplus}) {
+		.author {
+			font-size: 1.9rem;
+		}
+		div,
+		a {
+			font-size: 1.7rem;
 		}
 	}
 `;

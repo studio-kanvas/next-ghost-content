@@ -23,6 +23,13 @@ export const BlogContainer = styled(GS.FlexEven)`
 `;
 
 export const BlogArticles = styled.article`
+	img {
+		opacity: 0.8;
+		transition: all 0.25s ease-in-out;
+		&:hover {
+			opacity: 1;
+		}
+	}
 	h2 {
 		font-size: 3.5rem;
 		color: #000;
@@ -39,9 +46,42 @@ export const BlogArticles = styled.article`
 			font-size: 1.4rem;
 		}
 	}
+	.tag-li {
+		padding-bottom: 1.5rem;
+		.tag {
+			font-family: ${(props) => props.theme.fonts.header};
+			font-size: 1.7rem;
+			color: #666;
+			padding-right: 0.5rem;
+			&:after {
+				content: ' x';
+			}
+			&:nth-last-child(1)::after {
+				content: '';
+			}
+		}
+	}
 `;
 
 export const Article = styled.article`
+	.blog-meta {
+		font-size: 1.4rem;
+		color: #333;
+		.tag {
+			padding-right: 0.5rem;
+			&:after {
+				content: ' x';
+			}
+			&:nth-last-child(1)::after {
+				content: '';
+			}
+		}
+	}
+	.blog-meta a {
+		font-family: ${(props) => props.theme.fonts.header};
+		font-size: 1.5rem;
+		color: #000;
+	}
 	img {
 		width: 100%;
 		height: auto;
@@ -79,16 +119,11 @@ export const Content = styled.div`
 		padding: 0;
 		margin: 0;
 	}
-	img {
-		padding-bottom: 3rem;
-	}
 	figcaption {
 		font-style: italic;
 		font-size: 1.5rem;
-		padding-bottom: 4rem;
-	}
-	p:nth-child(1) {
-		padding-top: 0;
+		padding-top: 3rem;
+		text-align: center;
 	}
 	iframe {
 		width: 100%;
@@ -111,6 +146,9 @@ export const Content = styled.div`
 	}
 	p {
 		color: #333;
+		line-height: 3.1rem;
+		margin: 0;
+		padding: 1.5rem 0rem;
 	}
 `;
 
@@ -120,6 +158,9 @@ export const Blog = styled.ul`
 		img {
 			width: 100%;
 			height: auto;
+		}
+		h2 {
+			padding-bottom: 0;
 		}
 	}
 `;
@@ -188,7 +229,7 @@ export const TopBlogs = styled(GS.FlexEven)`
 					color: #000;
 				}
 				&::after {
-					content: ' /';
+					content: ' x';
 				}
 				&:nth-last-child(1)::after {
 					content: '';

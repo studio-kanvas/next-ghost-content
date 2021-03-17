@@ -24,13 +24,15 @@ const Header = () => {
 	const [page, setPage] = useState(null);
 	const [scroll, setScroll] = useState(null);
 	const [invert, setInvert] = useState(false);
-	const BACKGROUND_VALUE = 900;
+	const BACKGROUND_VALUE = 200;
 
 	function toggleMenu() {
+		//toggle open/close for menu
 		setMenu((prevMenu) => !prevMenu);
 	}
 
 	useEffect(() => {
+		//dynamically set the title of the page
 		const title = window.location.href
 			.split('/')
 			.pop()
@@ -40,10 +42,12 @@ const Header = () => {
 	}, []);
 
 	useEffect(() => {
+		//when menu is resized more than 700, close the menu
 		size.width >= 700 && menu ? setMenu(false) : null;
 	}, [size.width]);
 
 	useEffect(() => {
+		//when scrolled below BACKGROUND_VALUE, setInvert
 		document.addEventListener('scroll', function () {
 			setScroll(document.documentElement.scrollTop);
 			scroll > BACKGROUND_VALUE ? setInvert(true) : setInvert(false);

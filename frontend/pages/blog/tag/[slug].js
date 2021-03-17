@@ -4,12 +4,11 @@ import * as GS from '../../../styles/global';
 import Hero from '../../../components/hero';
 import styled from 'styled-components';
 import Link from 'next/link';
+import { useContext } from 'react';
+import MainContext from '../../../hooks/context';
 
 export default function Slug({ posts, tags, slug }) {
-	const timeConvert = (time) => {
-		time = time.slice(0, 10);
-		return time;
-	};
+	const context = useContext(MainContext);
 
 	//filters through the tags within the posts and returns the value that matches the slug
 	const filteredPosts = posts.filter((post) => post.tags.map((tag) => tag.slug).includes(slug));
@@ -37,21 +36,28 @@ export default function Slug({ posts, tags, slug }) {
 									<Link href={`/blog/${encodeURIComponent(post.slug)}`}>
 										<a>
 											<img src={post.feature_image} />
-											<div className="container">
-												<h2>{post.title}</h2>
-												{post.tags.map((tag) => {
-													return (
-														<Link
-															href={`/blog/tag/${encodeURIComponent(tag.slug)}`}
-															key={tag.id}
-														>
-															{tag.name}
-														</Link>
-													);
-												})}
-											</div>
 										</a>
 									</Link>
+									<div className="container">
+										<Link href={`/blog/${encodeURIComponent(post.slug)}`}>
+											<a>
+												<h2>{post.title}</h2>
+											</a>
+										</Link>
+										{post.tags.map((tag) => {
+											return (
+												<Link
+													href={`/blog/tag/${encodeURIComponent(tag.slug)}`}
+													key={tag.id}
+												>
+													<a className="tag">{tag.name}</a>
+												</Link>
+											);
+										})}
+										<div className="published">
+											Published on {context.timeConvert(post.published_at)}
+										</div>
+									</div>
 								</div>
 							);
 						})}
@@ -146,12 +152,17 @@ const Grid = styled(GS.GridThree)`
 				color: #000;
 				font-size: 2.4rem;
 			}
-			a {
+			.tag {
 				padding: 0.75rem;
 				background: #222;
 				color: #fff;
 				margin-right: 0.5rem;
 				font-size: 1.2rem;
+			}
+			.published {
+				margin-top: 1.75rem;
+				font-size: 1.4rem;
+				color: #555;
 			}
 		}
 	}

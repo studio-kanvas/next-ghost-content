@@ -1,6 +1,7 @@
 //serves as a master scss file if you will
 import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
+
     html {
         font-size: 62.5%;
     }

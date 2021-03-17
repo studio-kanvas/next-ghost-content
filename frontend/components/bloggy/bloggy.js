@@ -3,13 +3,13 @@ import * as GS from '../../styles/global';
 import SidebarMail from '../sidebarmail';
 import Link from 'next/link';
 import Title from '../title';
+import { useContext } from 'react';
+import MainContext from '../../hooks/context';
 
 const Bloggy = ({ posts, post, topPosts }) => {
 	console.log(topPosts);
-	const timeConvert = (time) => {
-		time = time.slice(0, 10);
-		return time;
-	};
+	const context = useContext(MainContext);
+
 	return (
 		<S.BlogContainer>
 			{/* Left Side */}
@@ -26,14 +26,26 @@ const Bloggy = ({ posts, post, topPosts }) => {
 												alt={`From The Ground Up - ${post.title}`}
 											/>
 										</li>
+										<li className="blog-meta">
+											<span>{post.authors[0].name}</span> x Published{' '}
+											{context.timeConvert(post.published_at)}
+										</li>
 										<li>
 											<h2>{post.title}</h2>
 										</li>
-										<li>{post.excerpt}</li>
-										<li className="blog-meta">
-											<span>{post.authors[0].name}</span> | Published{' '}
-											{timeConvert(post.published_at)}
+										<li className="tag-li">
+											{post.tags.map((tag) => {
+												return (
+													<Link
+														href={`/blog/tag/${encodeURIComponent(tag.slug)}`}
+														key={post.excerpt}
+													>
+														<a className="tag">{tag.name}</a>
+													</Link>
+												);
+											})}
 										</li>
+										<li>{post.excerpt}</li>
 									</S.Blog>
 								</a>
 							</Link>
@@ -41,7 +53,21 @@ const Bloggy = ({ posts, post, topPosts }) => {
 					})}
 				{post && (
 					<S.Article>
-						<h2>{post.title}</h2>
+						<GS.HeaderText fontSize={'4rem'}>{post.title}</GS.HeaderText>
+						<div className="blog-meta">
+							<strong>By {post.authors[0].name}</strong> x Published{' '}
+							{context.timeConvert(post.published_at)} x{' '}
+							{post.tags.map((tag) => {
+								return (
+									<Link
+										href={`/blog/tag/${encodeURIComponent(tag.slug)}`}
+										key={post.excerpt}
+									>
+										<a className="tag">{tag.name}</a>
+									</Link>
+								);
+							})}
+						</div>
 						<S.Content
 							dangerouslySetInnerHTML={{
 								__html: post.html,
@@ -86,7 +112,7 @@ const Bloggy = ({ posts, post, topPosts }) => {
 											})}
 										</ul>
 										<div className="created">
-											{post.authors[0].name} | {timeConvert(post.published_at)}
+											{post.authors[0].name} x {context.timeConvert(post.published_at)}
 										</div>
 									</div>
 								</S.TopBlogs>
@@ -123,7 +149,7 @@ const Bloggy = ({ posts, post, topPosts }) => {
 											})}
 										</ul>
 										<div className="created">
-											{post.authors[0].name} | {timeConvert(post.published_at)}
+											{post.authors[0].name} x {context.timeConvert(post.published_at)}
 										</div>
 									</div>
 								</S.TopBlogs>

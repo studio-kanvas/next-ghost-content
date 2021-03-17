@@ -416,3 +416,8 @@ export const Pagination = styled(FlexEven)`
 		text-align: center;
 	}
 `;
+
+export const HeaderText = styled.div`
+	font-size: ${(props) => props.fontSize};
+	font-family: ${(props) => props.theme.fonts.header};
+`;
