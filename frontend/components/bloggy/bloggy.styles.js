@@ -189,6 +189,10 @@ export const Blog = styled.ul`
 			font-family: ${props => props.theme.fonts.header};
 			font-size: 1.6rem;
 		}
+		p {
+			padding: 0rem;
+			margin: 0rem;
+		}
 	}
 `;
 

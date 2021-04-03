@@ -56,7 +56,7 @@ const Bloggy = ({ posts, post, topPosts }) => {
                                                 );
                                             })}
                                         </li>
-                                        <li dangerouslySetInnerHTML={{__html: excerptContext.setExcerpt(post.excerpt)}} />
+                                        <li dangerouslySetInnerHTML={{__html: excerptContext.setExcerpt(post.html)}} />
                                     </S.Blog>
                                 </a>
                             </Link>

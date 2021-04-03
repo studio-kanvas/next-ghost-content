@@ -91,7 +91,7 @@ export default function Home({ posts }) {
 																	);
 																})}{' '}
 															</div>
-															<p dangerouslySetInnerHTML={{__html: excerptContext.setExcerpt(post.excerpt)}} />
+															<p dangerouslySetInnerHTML={{__html: excerptContext.setExcerpt(post.html)}} />
 														</a>
 													</Link>
 												</div>
@@ -143,14 +143,14 @@ const Stories = styled(GS.FlexEven)`
 		display: block;
 	}
 	.photo {
-		flex: 1;
+		flex: 1.75;
 		img {
 			width: 100%;
 			height: auto;
 		}
 	}
 	.content {
-		flex: 1.15;
+		flex: 1;
 		h3 {
 			font-size: 2.5rem;
 			color: #222;
@@ -182,6 +182,11 @@ const Stories = styled(GS.FlexEven)`
 		.read-more {
 			font-family: ${props => props.theme.fonts.header};
 			font-size: 1.6rem;
+		}
+		p {
+			padding: .5rem 0rem 0rem 0rem;
+			line-height: 2.8rem;
+			color: #333;
 		}
 	}
 `;
