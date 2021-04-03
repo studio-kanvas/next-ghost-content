@@ -9,11 +9,13 @@ import Grid from '../components/grid';
 import { getPosts } from '../lib/ghost';
 import { HOMEPAGE } from '../data/homepage';
 import MainContext from '../hooks/context';
+import ExcerptContext from '../hooks/excerptContext';
 import { useContext } from 'react';
 
 export default function Home({ posts }) {
 	console.log(posts);
 	const context = useContext(MainContext);
+	const excerptContext = useContext(ExcerptContext);
 	return (
 		<>
 			<Layout>
@@ -54,7 +56,7 @@ export default function Home({ posts }) {
 											<div className="photo">
 												<Link
 													href={`/blog/${encodeURIComponent(post.slug)}`}
-													key={post.excerpt}
+													key={post.uuid}
 												>
 													<a>
 														<img
@@ -89,7 +91,7 @@ export default function Home({ posts }) {
 																	);
 																})}{' '}
 															</div>
-															<p>{post.excerpt}</p>
+															<p dangerouslySetInnerHTML={{__html: excerptContext.setExcerpt(post.excerpt)}} />
 														</a>
 													</Link>
 												</div>
@@ -176,6 +178,10 @@ const Stories = styled(GS.FlexEven)`
 			&:nth-last-child(1)::after {
 				content: '';
 			}
+		}
+		.read-more {
+			font-family: ${props => props.theme.fonts.header};
+			font-size: 1.6rem;
 		}
 	}
 `;

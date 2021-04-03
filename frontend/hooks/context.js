@@ -1,5 +1,6 @@
-import React from 'react';
-const MainContext = React.createContext({
+import React, {createContext} from 'react';
+
+const MainContext = createContext({
 	timeConvert: (time) => {
 		const year = time.slice(0, 4);
 		const month = time.slice(5, 7);
@@ -9,4 +10,5 @@ const MainContext = React.createContext({
 		return date;
 	},
 });
+
 export default MainContext;

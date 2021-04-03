@@ -17,12 +17,14 @@ export const HeroBackground = styled(GS.FullWidth)`
 `;
 
 export const Message = styled.div`
-	max-width: 70rem;
+	max-width: ${props => props.theme.maxWidth};
 	text-align: center;
 	margin: 0 auto;
 	padding: 15rem 0rem;
 	h1 {
-		color: #ffffff;
+		color: #fff;
+		font-size: 7rem;
+		margin-bottom: 2rem;
 	}
 	@media screen and (max-width: ${(props) => props.theme.iphoneplus}) {
 		h1 {

@@ -7,12 +7,12 @@ export const BlogContainer = styled(GS.FlexEven)`
 	margin: 7rem 0rem 5rem 0rem;
 	align-items: flex-start;
 	justify-content: flex-start;
-	gap: 3rem;
+	gap: 7.5rem;
 	& > article:nth-child(1) {
 		flex: 2;
 	}
 	& > article:nth-child(2) {
-		flex: 0.75;
+		flex: 1;
 	}
 	@media screen and (max-width: ${RESPONSIVE}) {
 		display: block;
@@ -112,6 +112,29 @@ export const Article = styled.article`
 	h5 {
 		font-size: 2.5rem;
 	}
+	.fb-share-button {
+		border: .1rem solid #333;
+		padding: .5rem 1rem;
+		text-transform: uppercase;
+		width: 8rem;
+		text-align: center;
+		a {
+			font-size: 1.2rem;
+		}
+		svg {
+			top: .175rem;
+			position: relative;
+		}
+		transition: all .25s ease-in-out;
+		&:hover {
+			background: #333;
+			color: #fff;
+			svg, a {
+				color: #fff;
+			}
+			cursor: pointer;
+		}
+	}
 `;
 
 export const Content = styled.div`
@@ -161,6 +184,10 @@ export const Blog = styled.ul`
 		}
 		h2 {
 			padding-bottom: 0;
+		}
+		.read-more {
+			font-family: ${props => props.theme.fonts.header};
+			font-size: 1.6rem;
 		}
 	}
 `;

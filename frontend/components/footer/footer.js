@@ -15,6 +15,7 @@ const Footer = () => {
 		const year = new Date().getFullYear();
 		document.querySelector('.copy-year').innerHTML = year;
 	}, []);
+
 	return (
 		<>
 			<S.FooterBg>
