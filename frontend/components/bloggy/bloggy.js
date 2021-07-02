@@ -88,7 +88,7 @@ const Bloggy = ({ posts, post, topPosts }) => {
                                 __html: post.html,
                             }}
                         />
-                        <div
+                        {/* <div
                             className="fb-share-button"
                             data-href="https://fromthegroundup.io"
                             data-layout="button"
@@ -101,7 +101,11 @@ const Bloggy = ({ posts, post, topPosts }) => {
                             >
                                 <FaFacebook /> Share
                             </a>
-                        </div>
+                        </div> */}
+                        <S.Share>
+                            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                            <div className="elfsight-app-fe1e77ba-2836-425a-adca-9ca69eb39c62"></div>
+                        </S.Share>
                     </S.Article>
                 )}
             </S.BlogArticles>

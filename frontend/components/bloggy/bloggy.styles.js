@@ -22,6 +22,9 @@ export const BlogContainer = styled(GS.FlexEven)`
 	}
 `;
 
+export const Share = styled.div`
+`
+
 export const BlogArticles = styled.article`
 	img {
 		opacity: 0.8;
