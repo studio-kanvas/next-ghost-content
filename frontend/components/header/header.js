@@ -61,7 +61,7 @@ const Header = () => {
             : setInvert(false);
     }, []);
 
-	const description = "From The Ground Up Academy is an online training platform for creative entrepreneurs looking to build a brand and impact the world.";
+	const description = "From The Ground Up Academy is an online training platform where creative entrepreneurs can build a brand and impact the world.";
 
     return (
         <>
