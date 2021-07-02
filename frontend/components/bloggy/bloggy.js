@@ -1,4 +1,4 @@
-import {useState, useEffect, createContext} from 'react';
+import {useState, useEffect} from 'react';
 import * as S from './bloggy.styles';
 import * as GS from '../../styles/global';
 import SidebarMail from '../sidebarmail';
@@ -19,17 +19,6 @@ const payload = {
 const Bloggy = ({ posts, post, topPosts }) => {
     const context = useContext(MainContext);
     const excerptContext = useContext(ExcerptContext);
-    const [shareContent, setShareContent] = useState(payload)
-
-    useEffect(() => {
-        setShareContent({
-            image: post.feature_image,
-            title: post.title,
-            url: `fromthegroundup.io/blog/${encodeURIComponent(post.slug)}`,
-            description: excerptContext.setExcerpt(post.html),
-        })
-        console.log(shareContent)
-    }, [post])
 
     return (
         <S.BlogContainer>
