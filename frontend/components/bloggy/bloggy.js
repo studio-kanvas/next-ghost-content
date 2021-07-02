@@ -1,3 +1,4 @@
+import {useState, useEffect, createContext} from 'react';
 import * as S from './bloggy.styles';
 import * as GS from '../../styles/global';
 import SidebarMail from '../sidebarmail';
@@ -8,9 +9,28 @@ import MainContext from '../../hooks/context';
 import ExcerptContext from '../../hooks/excerptContext';
 import {FaFacebook} from 'react-icons/fa';
 
+const payload = {
+    image: '',
+    title: '',
+    url: '',
+    description: ''
+}
+
 const Bloggy = ({ posts, post, topPosts }) => {
     const context = useContext(MainContext);
     const excerptContext = useContext(ExcerptContext);
+    const [shareContent, setShareContent] = useState(payload)
+
+    useEffect(() => {
+        setShareContent({
+            image: post.feature_image,
+            title: post.title,
+            url: `fromthegroundup.io/blog/${encodeURIComponent(post.slug)}`,
+            description: excerptContext.setExcerpt(post.html),
+        })
+        console.log(shareContent)
+    }, [post])
+
     return (
         <S.BlogContainer>
             {/* Left Side */}
@@ -88,7 +108,7 @@ const Bloggy = ({ posts, post, topPosts }) => {
                                 __html: post.html,
                             }}
                         />
-                        {/* <div
+                        <div
                             className="fb-share-button"
                             data-href="https://fromthegroundup.io"
                             data-layout="button"
@@ -101,11 +121,11 @@ const Bloggy = ({ posts, post, topPosts }) => {
                             >
                                 <FaFacebook /> Share
                             </a>
-                        </div> */}
-                        <S.Share>
+                        </div>
+                        {/* <S.Share>
                             <script src="https://apps.elfsight.com/p/platform.js" defer></script>
                             <div className="elfsight-app-fe1e77ba-2836-425a-adca-9ca69eb39c62"></div>
-                        </S.Share>
+                        </S.Share> */}
                     </S.Article>
                 )}
             </S.BlogArticles>
