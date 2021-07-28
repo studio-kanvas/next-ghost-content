@@ -50,7 +50,7 @@ const Header = () => {
         const scrollInvert = () => {
             setScroll(document.documentElement.scrollTop);
             scroll > BACKGROUND_VALUE ? setInvert(true) : setInvert(false);
-        }
+        };
         //when scrolled below BACKGROUND_VALUE, setInvert
         document.addEventListener('scroll', () => scrollInvert());
     }, [scroll]);
@@ -61,7 +61,8 @@ const Header = () => {
             : setInvert(false);
     }, []);
 
-	const description = "From The Ground Up Academy is an online training platform where creative entrepreneurs can build a brand and impact the world.";
+    const description =
+        'From The Ground Up Academy is an online training platform where creative entrepreneurs can build a brand and impact the world.';
 
     return (
         <>
@@ -75,15 +76,34 @@ const Header = () => {
                     content="initial-scale=1.0, width=device-width"
                 />
                 <meta name="description" content={description} />
-				<meta property="og:url"           content={process.env.WEBSITE_URL + '/' + page} />
-				<meta property="og:type"          content="website" />
-				<meta property="og:title"         content={title} />
-				<meta property="og:description"   content={description} />
-				<meta property="og:image"         content="/ftgu-og.jpg" />
+                <meta
+                    property="og:url"
+                    content={process.env.WEBSITE_URL + '/' + page}
+                />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={description} />
+                <meta property="og:image" content="/ftgu-og.jpg" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link
                     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;700&display=swap"
                     rel="stylesheet"
+                />
+
+                <script
+                    async
+                    src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+                />
+
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '${process.env.GOOGLE_ANALYTICS}', { page_path: window.location.pathname });
+                    `,
+                    }}
                 />
             </Head>
             {menu && <Menu />}
